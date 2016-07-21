@@ -3,7 +3,7 @@
 Dialog that returns promises
 
 <!-- cucardas -->
-![designing](https://img.shields.io/badge/stability-designing-red.svg)
+![extending](https://img.shields.io/badge/stability-extending-orange.svg)
 [![npm-version](https://img.shields.io/npm/v/dialog-promise.svg)](https://npmjs.org/package/dialog-promise)
 [![downloads](https://img.shields.io/npm/dm/dialog-promise.svg)](https://npmjs.org/package/dialog-promise)
 [![build](https://img.shields.io/travis/codenautas/dialog-promise/master.svg)](https://travis-ci.org/codenautas/dialog-promise)
@@ -18,6 +18,19 @@ idioma: ![castellano](https://raw.githubusercontent.com/codenautas/multilang/mas
 también disponible en:
 [![inglés](https://raw.githubusercontent.com/codenautas/multilang/master/img/lang-en.png)](README.md)
 
+<!--lang:*-->
+
+# API
+
+## alertPromise, confirmPromise & promptPromise
+
+<!--lang:es-->
+Implementa con promesas las funciones `alert`, `confirm` y `prompt`
+
+<!--lang:en--]
+Implements `alert`, `confirm` & `prompt` functions with Promises
+
+
 <!--lang:es-->
 ## Uso
 <!--lang:en--]
@@ -29,8 +42,10 @@ también disponible en:
 <button onclick='example2(this)'>example</button>
 <script>
 function example2(button){
-    alertPromise('the button becames red').then(function(){
-        button.style.backgroundColor='red';
+    promptPromise("What's your name?").then(function(name){
+        return alertPromise("Hi "+name);
+    }).then(function(){
+        button.textContent='try again!';
     });
 }
 </script>

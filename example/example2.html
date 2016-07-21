@@ -3,8 +3,10 @@
 <button onclick='example2(this)'>example</button>
 <script>
 function example2(button){
-    alertPromise('the button becames red').then(function(){
-        button.style.backgroundColor='red';
+    promptPromise("What's your name?").then(function(name){
+        return alertPromise("Hi "+name);
+    }).then(function(){
+        button.textContent='try again!';
     });
 }
 </script>
