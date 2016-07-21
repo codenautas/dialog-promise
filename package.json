@@ -8,7 +8,7 @@
   "main": "lib/dialog-promise.js",
   "files": [
     "lib"
-  ]
+  ],
   "dependencies": {
   },
   "devDependencies": {
