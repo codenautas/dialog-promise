@@ -1,0 +1,10 @@
+<link rel="stylesheet" type="text/css" href="../lib/dialog-promise.css">
+<script src="../lib/dialog-promise.js"></script>
+<button onclick='example2(this)'>example</button>
+<script>
+function example2(button){
+    alertPromise('the button becames red').then(function(){
+        button.style.backgroundColor='red';
+    });
+}
+</script>

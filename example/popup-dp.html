@@ -11,14 +11,24 @@
     <p>
       <button id=alert_example1>Alert example</button>
     </p>
+    <p>
+      <button id=add_lines>Add many lines</button>
+    </p>
     <p>Results:</p>
     <pre id=results></pre>
     <script src="../lib/dialog-promise.js"></script>
 <script>
 window.addEventListener('load', function(){
+    add_lines.addEventListener('click', function(){
+        for(var i=1; i<=1000; i++){
+            results.textContent+='\n'+'Adding line '+i;
+        }
+    });
     alert_example1.addEventListener('click', function(){
-        alertPromise('First example').then(function(){
-            results.textContent+='\n'+'Alert window closed!';
+        alertPromise('First example').then(function(result){
+            results.textContent+='\n'+'Alert window closed: '+result;
+        }).catch(function(err){
+            results.textContent+='\n'+'ERROR '+err.message;
         });
     });
 });
