@@ -18,6 +18,9 @@
       <button id=prompt_example1>Prompt example</button>
     </p>
     <p>
+      <button id=menu_example1>menu example</button>
+    </p>
+    <p>
       <button id=toggle_close>Toggle close button</button>
     </p>
     <p>
@@ -45,6 +48,15 @@ window.addEventListener('load', function(){
     });
     prompt_example1.addEventListener('click', function(){
         promptPromise('What is your name?').then(function(result){
+            results.textContent+='\n'+'You typed: '+result;
+        });
+    });
+    menu_example1.addEventListener('click', function(){
+        promptPromise([
+            {value:'1a', img:'1a.png', label:'first option'},
+            {value:'2b', img:'2b.png', label:'second b'},
+            {value:'3c', img:'3c.png', label:'last one'},
+        ]).then(function(result){
             results.textContent+='\n'+'You typed: '+result;
         });
     });
