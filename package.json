@@ -1,0 +1,51 @@
+{
+  "name": "dialog-promise",
+  "description": "Dialog that returns promises",
+  "version": "0.0.1",
+  "author": "Codenautas <codenautas@googlegroups.com>",
+  "repository": "codenautas/dialog-promise",
+  "license": "MIT",
+  "main": "lib/dialog-promise.js",
+  "files": [
+    "lib"
+  ]
+  "dependencies": {
+  },
+  "devDependencies": {
+    "expect.js": "~0.3.1",
+    "istanbul": "~0.4.3",
+    "mocha": "~2.4.5"
+  },
+  "engines": {
+    "node": ">= 0.12"
+  },
+  "scripts": {
+    "test": "mocha --reporter spec --bail --check-leaks test/",
+    "test-nc": "mocha --reporter spec --bail --check-leaks --no-colors test/",
+    "test-ci": "istanbul cover node_modules/mocha/bin/_mocha --report lcovonly -- --reporter spec --check-leaks test/",
+    "test-cov": "istanbul cover node_modules/mocha/bin/_mocha -- --reporter dot --check-leaks test/",
+    "start": "node example/server.js"
+  },
+  "jshintConfig": {
+    "asi": false,
+    "forin": true,
+    "curly": true
+  },
+  "eslintConfig": {
+    "env": {
+      "node": false
+    },
+    "rules": {
+      "strict": 0,
+      "no-console": 1,
+      "no-unused-vars": 1
+    }
+  },
+  "qa-control": {
+    "package-version": "0.2.0",
+    "coverage": 0,
+    "run-in": "client",
+    "stability": "extending",
+    "type": "lib"
+  }
+}
