@@ -15,6 +15,9 @@
       <button id=confirm_example1>Confirm example</button>
     </p>
     <p>
+      <button id=prompt_example1>Prompt example</button>
+    </p>
+    <p>
       <button id=add_lines>Add many lines</button>
     </p>
     <p>Results:</p>
@@ -35,6 +38,11 @@ window.addEventListener('load', function(){
     confirm_example1.addEventListener('click', function(){
         confirmPromise('Do you like this example?').then(function(result){
             results.textContent+='\n'+'Alert window closed: '+result;
+        });
+    });
+    prompt_example1.addEventListener('click', function(){
+        promptPromise('What is your name?').then(function(result){
+            results.textContent+='\n'+'You typed: '+result;
         });
     });
 });
