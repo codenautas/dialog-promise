@@ -12,6 +12,9 @@
       <button id=alert_example1>Alert example</button>
     </p>
     <p>
+      <button id=confirm_example1>Confirm example</button>
+    </p>
+    <p>
       <button id=add_lines>Add many lines</button>
     </p>
     <p>Results:</p>
@@ -27,8 +30,11 @@ window.addEventListener('load', function(){
     alert_example1.addEventListener('click', function(){
         alertPromise('First example').then(function(result){
             results.textContent+='\n'+'Alert window closed: '+result;
-        }).catch(function(err){
-            results.textContent+='\n'+'ERROR '+err.message;
+        });
+    });
+    confirm_example1.addEventListener('click', function(){
+        confirmPromise('Do you like this example?').then(function(result){
+            results.textContent+='\n'+'Alert window closed: '+result;
         });
     });
 });
