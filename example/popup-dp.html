@@ -18,6 +18,9 @@
       <button id=prompt_example1>Prompt example</button>
     </p>
     <p>
+      <button id=toggle_close>Toggle close button</button>
+    </p>
+    <p>
       <button id=add_lines>Add many lines</button>
     </p>
     <p>Results:</p>
@@ -44,6 +47,9 @@ window.addEventListener('load', function(){
         promptPromise('What is your name?').then(function(result){
             results.textContent+='\n'+'You typed: '+result;
         });
+    });
+    toggle_close.addEventListener('click', function(){
+        dialogPromise.withCloseButton=!dialogPromise.withCloseButton;
     });
 });
     

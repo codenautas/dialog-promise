@@ -1,8 +1,8 @@
 .dialog-promise{
     background-color: white;
     text-align: center;
-    margin: 0px 0 20px 0;
-    padding: 10px;
+    margin: 0px;
+    padding: 0px;
     display: none;
     z-index: 1;
     width: auto;
@@ -17,8 +17,12 @@
     animation: animatezoom 0.6s;
 }
 
-.dialog-promise>div{
-    margin: 5% auto 15% auto; 
+.dialog-promise>*{
+    margin: 10px 10px 5px 10px; 
+}
+
+.dialog-promise>div:nth-child(2){
+    margin-top: 20px; 
 }
 
 .dialog-promise button{
@@ -47,4 +51,19 @@
     background-color: rgb(0,0,0); /* Fallback color */
     background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
     padding-top: 60px;
+}
+
+.dialog-promise .dialog-promise-close-button{
+    margin:0px;
+    float:right;
+    background-color:red;
+    width:24px;
+    height:16px;
+    color:white;
+    font-weight:bold;
+    font-size:60%;
+}
+
+.dialog-promise-close-button:before{
+    content:'X';
 }
