@@ -67,3 +67,7 @@
 .dialog-promise-close-button:before{
     content:'X';
 }
+
+#the-table{
+    margin: 0;
+}
