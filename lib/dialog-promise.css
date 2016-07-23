@@ -13,8 +13,8 @@
     left: 50%;
     margin-top: -10px;
     margin-left: -100px;
-    -webkit-animation: animatezoom 0.6s;
-    animation: animatezoom 0.6s;
+    -webkit-animation: animatezoom 0.3s;
+    animation: animatezoom 0.3s;
 }
 
 .dialog-promise>*{
@@ -30,12 +30,12 @@
 }
 
 @-webkit-keyframes animatezoom {
-    from {-webkit-transform: scale(0)}
+    from {-webkit-transform: scale(0.5)}
     to {-webkit-transform: scale(1)}
 }
 
 @keyframes animatezoom {
-    from {transform: scale(0)}
+    from {transform: scale(0.5)}
     to {transform: scale(1)}
 }
 
@@ -68,6 +68,29 @@
     content:'X';
 }
 
-#the-table{
-    margin: 0;
+.dialog-menu label{
+    margin-left:4px;
+    vertical-align: 20%;
+    white-space: nowrap;
+}
+
+.dialog-menu td{
+    text-align:left;
+}
+
+.dialog-menu tr:hover{
+    background-color:#DDF;
+    opacity: 0.9;
+}
+
+.dialog-0 *{
+    padding:0px;
+    margin:0px;
+    border:0px;
+    border-image-width:0px;
+    vertical-align: bottom;
+}
+
+.dialog-0 table{
+    border-collapse: collapse;
 }
