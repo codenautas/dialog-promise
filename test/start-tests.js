@@ -12,8 +12,10 @@ var slimerPath=process.env.TRAVIS?'slimerjs':'./node_modules/slimerjs/lib/slimer
     
 var pidBrowser = spawn(
     (process.env.TRAVIS && false?'casperjs':'./node_modules/casperjs/bin/'+(winOS?'casperjs.exe':'casperjs')),
-    ['--verbose',
-     Path.resolve('./test/casper-test.js')
+    [
+        'test',
+        '--verbose',
+        Path.resolve('./test/casper-test.js')
     ],
     { stdio: 'inherit' , env: changing(process.env,{PHANTOMJS_EXECUTABLE: phantomPath, SLIMERJS_EXECUTABLE:slimerPath})}
 );

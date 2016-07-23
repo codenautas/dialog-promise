@@ -28,15 +28,19 @@
     </p>
     <p>Results:</p>
     <pre id=results></pre>
+    <script src="../node_modules/es6-promise/dist/es6-promise.min.js"></script>
     <script src="../lib/dialog-promise.js"></script>
 <script>
+
 window.addEventListener('load', function(){
+    results.textContent+='Initiated';
     add_lines.addEventListener('click', function(){
         for(var i=1; i<=1000; i++){
             results.textContent+='\n'+'Adding line '+i;
         }
     });
     alert_example1.addEventListener('click', function(){
+        results.textContent+='\nFirstClick';
         alertPromise('First example').then(function(result){
             results.textContent+='\n'+'Alert window closed: '+result;
         });
@@ -65,34 +69,6 @@ window.addEventListener('load', function(){
     });
 });
     
-function askPromise(opts) {
-    if(typeof opts === 'string'){
-        opts={
-            message: opts,
-            buttonList:[
-               {label: 'Ok', returns: true, isDefault:true},
-               {label: 'Cancel', returns: false},
-            ],
-            cancelValue: false
-        }
-    }
-    var html = jsToHtml.html;
-    return dialogPromise(function(mainElement, done){
-        innerElement = html.div([
-            html.div(opts.message),
-            html.div({'class':'answer-buttons'}, opts.buttonList.map(function(buttonDef){
-                var attrs={};
-                if(buttonDef.isDefault){
-                    attrs.autofocus=true;
-                }
-                var button=html.button(attrs, buttonDef.label).create();
-                button.addEventListener('click', done.bind(null, buttonDef.returning));
-                return button;
-            }))
-        ]).create();
-        mainElement.appendChild(innerElement);
-    });
-}
 </script>
 
 </body>
