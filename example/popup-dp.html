@@ -8,20 +8,25 @@
   </head>
   <body>
     <h1>Dialog Promise examples</h1>
-    <p>
-      <button id=alert_example1>Alert example</button>
-    </p>
-    <p>
-      <button id=confirm_example1>Confirm example</button>
-    </p>
-    <p>
-      <button id=prompt_example1>Prompt example</button>
-    </p>
-    <p>
-      <button id=menu_example1>menu example</button>
-    </p>
+    <div style="float: left; margin:30px">
+        <p>
+          <button id=alert_example1>Alert example</button>
+        </p>
+        <p>
+          <button id=confirm_example1>Confirm example</button>
+        </p>
+        <p>
+          <button id=prompt_example1>Prompt example</button>
+        </p>
+        <p>
+          <button id=menu_example1>menu example</button>
+        </p>
+    </div>
     <p>
       <button id=toggle_close>Toggle close button</button>
+    </p>
+    <p>
+      <button id=set_spanish>Set spanish</button>
     </p>
     <p>
       <button id=add_lines>Add many lines</button>
@@ -47,7 +52,7 @@ window.addEventListener('load', function(){
     });
     confirm_example1.addEventListener('click', function(){
         confirmPromise('Do you like this example?').then(function(result){
-            results.textContent+='\n'+'Alert window closed: '+result;
+            results.textContent+='\n'+'Like confirm: '+result;
         });
     });
     prompt_example1.addEventListener('click', function(){
@@ -63,6 +68,9 @@ window.addEventListener('load', function(){
         ]).then(function(result){
             results.textContent+='\n'+'You typed: '+result;
         });
+    });
+    set_spanish.addEventListener('click', function(){
+        DialogPromise.messages=DialogPromise.castellano;
     });
     toggle_close.addEventListener('click', function(){
         dialogPromise.withCloseButton=!dialogPromise.withCloseButton;
