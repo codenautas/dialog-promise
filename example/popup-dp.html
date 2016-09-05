@@ -21,6 +21,9 @@
         <p>
           <button id=menu_example1>menu example</button>
         </p>
+        <p>
+          <button id=bigdialog_example1>Big dialog</button>
+        </p>
     </div>
     <p>
       <button id=toggle_close>Toggle close button</button>
@@ -57,6 +60,17 @@ window.addEventListener('load', function(){
     });
     prompt_example1.addEventListener('click', function(){
         promptPromise('What is your name?').then(function(result){
+            results.textContent+='\n'+'You typed: '+result;
+        });
+    });
+    bigdialog_example1.addEventListener('click', function(){
+        dialogPromise(function(mainElement, done){
+            mainElement.innerHTML='<div><img src=pizarra.png><h1>This is a very big message window</h1><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas semper leo ac euismod euismod. Ut efficitur, sem quis laoreet luctus, turpis leo accumsan dolor, quis scelerisque nibh metus hendrerit elit. Phasellus in finibus augue. Morbi nec metus et risus scelerisque scelerisque id non urna. Sed hendrerit at metus viverra pellentesque. Integer tempus nunc dolor, et vehicula nunc condimentum dignissim. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nullam dapibus ipsum a ante commodo sodales. Integer turpis nisl, ultrices sit amet condimentum ac, rhoncus eget magna. Phasellus quis felis eros. Donec porttitor cursus odio, non scelerisque nisl interdum quis. Cras in egestas lectus.<img src="Oxygen480-actions-key-enter.svg.png">';
+            var imgs=mainElement.querySelectorAll('img');
+            Array.prototype.forEach.call(imgs,function(img){
+                img.onclick=function(){ done(img.src); };
+            });
+        }).then(function(result){
             results.textContent+='\n'+'You typed: '+result;
         });
     });
