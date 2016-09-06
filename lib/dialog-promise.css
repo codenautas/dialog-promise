@@ -13,6 +13,10 @@
     position: fixed;
     top: 5%;
     left: 5%;
+    /*
+    bottom: 5%;
+    right: 5%;
+    */
     /* margin-top: -10px; */
     /* margin-left: -100px; */
     -webkit-animation: animatezoom 0.3s;
