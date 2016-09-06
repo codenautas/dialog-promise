@@ -79,7 +79,7 @@ window.addEventListener('load', function(){
             {value:'1a', img:'1a.png', label:'first option'},
             {value:'2b', img:'2b.png', label:'second b'},
             {value:'3c', img:'3c.png', label:'last one'},
-        ]).then(function(result){
+        ],{underElement:menu_example1}).then(function(result){
             results.textContent+='\n'+'You typed: '+result;
         });
     });

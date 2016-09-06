@@ -15,6 +15,14 @@ language: ![English](https://raw.githubusercontent.com/codenautas/multilang/mast
 also available in:
 [![Spanish](https://raw.githubusercontent.com/codenautas/multilang/master/img/lang-es.png)](LEEME.md)
 
+
+# API
+
+## alertPromise, confirmPromise & promptPromise
+
+Implements `alert`, `confirm` & `prompt` functions with Promises
+
+
 ## Use
 
 ```html
@@ -22,12 +30,54 @@ also available in:
 <button onclick='example2(this)'>example</button>
 <script>
 function example2(button){
-    alertPromise('the button becames red').then(function(){
-        button.style.backgroundColor='red';
+    promptPromise("What's your name?").then(function(name){
+        return alertPromise("Hi "+name);
+    }).then(function(){
+        button.textContent='try again!';
     });
 }
 </script>
 ```
+
+## alertPromise, confirmPromise, promptPromise
+
+Recives a mensage (and an object with options).
+These are versions of the native funcions `alert`, `confirm` y `prompt`
+
+function  |returned value
+----------|---------------------
+`alert`   |`true`
+`confirm` |`true` or `false`
+`prompt`  |a string with the entered text
+
+If `Escape` is pressed or the mouse clicked outside the dialog the function returns `undefined`.
+
+## miniMenuPromise(elementsList[, opts])
+Display a menu
+
+
+```html
+<script src="dialog-promise.js"></script>
+<button id=theButton onclick='example3(this)'>example</button>
+<script>
+function example3(button){
+    miniMenuPromise([
+        {value:'ar', img:'ar.png', label:'Argentina'},
+        {value:'cl', img:'cl.png', label:'Chile'},
+        {value:'uy', img:'uy.png', label:'Uruguay'},
+    ], {underElement: theButton}).then(function(option){
+        return alertPromise("val = "+option);
+    });
+}
+</script>
+```
+
+## Options
+The options could be passed to all of these functions
+
+option         |use
+---------------|-------------------------------------
+`underElement` | the dialog apears below this element. If no element is passed the dialog apears in the center of the window
 
 ## License
 
