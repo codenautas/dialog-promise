@@ -22,6 +22,9 @@
           <button id=menu_example1>menu example</button>
         </p>
         <p>
+          <button id=menu_example2>menu without [X] here</button>
+        </p>
+        <p>
           <button id=bigdialog_example1>Big dialog</button>
         </p>
     </div>
@@ -74,15 +77,19 @@ window.addEventListener('load', function(){
             results.textContent+='\n'+'You typed: '+result;
         });
     });
-    menu_example1.addEventListener('click', function(){
-        miniMenuPromise([
-            {value:'1a', img:'1a.png', label:'first option'},
-            {value:'2b', img:'2b.png', label:'second b'},
-            {value:'3c', img:'3c.png', label:'last one'},
-        ],{underElement:menu_example1}).then(function(result){
-            results.textContent+='\n'+'You typed: '+result;
-        });
-    });
+    var thisMenu=function(opts){
+        return function(){
+            miniMenuPromise([
+                {value:'1a', img:'1a.png', label:'first option'},
+                {value:'2b', img:'2b.png', label:'second b'},
+                {value:'3c', img:'3c.png', label:'last one'},
+            ],opts).then(function(result){
+                results.textContent+='\n'+'You typed: '+result;
+            });
+        }
+    };
+    menu_example1.addEventListener('click', thisMenu());
+    menu_example2.addEventListener('click', thisMenu({underElement:menu_example2, withCloseButton:false}));
     set_spanish.addEventListener('click', function(){
         DialogPromise.messages=DialogPromise.castellano;
     });
