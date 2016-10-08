@@ -23,6 +23,9 @@ casper.test.begin('Setup', function(test) {
         test.assertExists('#alert_example1', 'have the button');
         test.assertDoesntExist('.dialog_promise', 'dialog not exists');
         clickOver('#alert_example1');
+        casper.wait(100, function() {
+            this.echo("I've waited for a while.");
+        });
         this.capture('local-capture2.png');
         
         test.assertExists('.dialog-promise', 'dialog apears');

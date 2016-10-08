@@ -17,7 +17,7 @@ var pidBrowser = spawn(
         '--verbose',
         Path.resolve('./test/casper-test.js')
     ],
-    { stdio: 'inherit' , env: changing(process.env,{PHANTOMJS_EXECUTABLE: phantomPath, SLIMERJS_EXECUTABLE:slimerPath})}
+    { stdio: 'inherit' , env: changing(process.env,{PHANTOMJS_EXECUTABLE: phantomPath, SLIMERJS_EXECUTABLE:slimerPath},changing.options({mostlyPlain:true}))}
 );
 pidBrowser.on('close', function (code, signal) {
     console.log('browser closed', code, signal);
