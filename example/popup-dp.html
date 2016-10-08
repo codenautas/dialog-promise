@@ -32,6 +32,9 @@
       <button id=toggle_close>Toggle close button</button>
     </p>
     <p>
+      <button id=toggle_reject>Toggle reject</button>
+    </p>
+    <p>
       <button id=set_spanish>Set spanish</button>
     </p>
     <p>
@@ -42,6 +45,11 @@
     <script src="../node_modules/es6-promise/dist/es6-promise.min.js"></script>
     <script src="../lib/dialog-promise.js"></script>
 <script>
+
+function seeReject(err){
+    results.textContent+='\n'+'CATCHED: '+err.message;
+    results.textContent+='\n'+'STACK: '+err.stack;
+}
 
 window.addEventListener('load', function(){
     results.textContent+='Initiated';
@@ -54,17 +62,17 @@ window.addEventListener('load', function(){
         results.textContent+='\nFirstClick';
         alertPromise('First example').then(function(result){
             results.textContent+='\n'+'Alert window closed: '+result;
-        });
+        }).catch(seeReject);
     });
     confirm_example1.addEventListener('click', function(){
         confirmPromise('Do you like this example?').then(function(result){
             results.textContent+='\n'+'Like confirm: '+result;
-        });
+        }).catch(seeReject);
     });
     prompt_example1.addEventListener('click', function(){
         promptPromise('What is your name?').then(function(result){
             results.textContent+='\n'+'You typed: '+result;
-        });
+        }).catch(seeReject);
     });
     bigdialog_example1.addEventListener('click', function(){
         dialogPromise(function(mainElement, done){
@@ -75,7 +83,7 @@ window.addEventListener('load', function(){
             });
         }).then(function(result){
             results.textContent+='\n'+'You typed: '+result;
-        });
+        }).catch(seeReject);
     });
     var thisMenu=function(opts){
         return function(){
@@ -85,16 +93,19 @@ window.addEventListener('load', function(){
                 {value:'3c', img:'3c.png', label:'last one'},
             ],opts).then(function(result){
                 results.textContent+='\n'+'You typed: '+result;
-            });
+            }).catch(seeReject);
         }
     };
     menu_example1.addEventListener('click', thisMenu());
     menu_example2.addEventListener('click', thisMenu({underElement:menu_example2, withCloseButton:false}));
     set_spanish.addEventListener('click', function(){
-        DialogPromise.messages=DialogPromise.castellano;
+        DialogPromise.messages=DialogPromise.es;
     });
     toggle_close.addEventListener('click', function(){
-        dialogPromise.withCloseButton=!dialogPromise.withCloseButton;
+        DialogPromise.defaultOpts.withCloseButton=!DialogPromise.defaultOpts.withCloseButton;
+    });
+    toggle_reject.addEventListener('click', function(){
+        DialogPromise.defaultOpts.reject=!DialogPromise.defaultOpts.reject;
     });
 });
     
