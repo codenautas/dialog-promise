@@ -42,7 +42,7 @@
     </p>
     <p>Results:</p>
     <pre id=results></pre>
-    <script src="../node_modules/es6-promise/dist/es6-promise.min.js"></script>
+    <script src="../node_modules/es6-promise/dist/es6-promise.auto.js"></script>
     <script src="../lib/dialog-promise.js"></script>
 <script>
 
@@ -108,7 +108,13 @@ window.addEventListener('load', function(){
         DialogPromise.defaultOpts.reject=!DialogPromise.defaultOpts.reject;
     });
 });
-    
+
+window.addEventListener('error', function(err){
+    results.textContent+='\nError';
+    results.textContent+='\n'+err;
+    results.textContent+='\n'+err.message;
+    results.textContent+='\n'+err.stack;
+});    
 </script>
 
 </body>

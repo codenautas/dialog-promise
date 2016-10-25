@@ -25,14 +25,13 @@ casper.test.begin('Setup', function(test) {
         clickOver('#alert_example1');
         casper.wait(100, function() {
             this.echo("I've waited for a while.");
+            this.capture('local-capture2.png');
+            test.assertExists('.dialog-promise', 'dialog apears');
+            test.assertVisible('.dialog-promise', 'dialog is visible');
+            clickOver('#alert_example1');
+            test.assertDoesntExist('.dialog-promise', 'dialog not exists 2');
+            test.done();
         });
-        this.capture('local-capture2.png');
-        
-        test.assertExists('.dialog-promise', 'dialog apears');
-        test.assertVisible('.dialog-promise', 'dialog is visible');
-        clickOver('#alert_example1');
-        test.assertDoesntExist('.dialog-promise', 'dialog not exists 2');
-        test.done();
     }).run(function() {
         test.done();
     });
