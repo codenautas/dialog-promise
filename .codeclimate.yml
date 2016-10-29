@@ -8,6 +8,8 @@ engines:
       - javascript
       - python
       - php
+    exclude_fingerprints:
+    - 016b16930e69e4fd9e69e8d17967b283      
   eslint:
     enabled: true
     checks:

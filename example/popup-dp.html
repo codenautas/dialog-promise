@@ -6,7 +6,7 @@
     <link rel="stylesheet" type="text/css" href="popup-dp.css">
     <link rel="stylesheet" type="text/css" href="../lib/dialog-promise.css">
   </head>
-  <body>
+  <body class="for-test">
     <h1>Dialog Promise examples</h1>
     <div style="float: left; margin:30px">
         <p>
@@ -24,8 +24,14 @@
         <p>
           <button id=menu_example2>menu without [X] here</button>
         </p>
+        <p style="position: absolute; top:100px; right:20px">
+          <button id=menu_example3>menu under</button>
+        </p>
         <p>
           <button id=bigdialog_example1>Big dialog</button>
+        </p>
+        <p style="position: absolute; top:100px; left:50%">
+          <button id=big_under>Big under</button>
         </p>
     </div>
     <p>
@@ -74,17 +80,21 @@ window.addEventListener('load', function(){
             results.textContent+='\n'+'You typed: '+result;
         }).catch(seeReject);
     });
-    bigdialog_example1.addEventListener('click', function(){
-        dialogPromise(function(mainElement, done){
-            mainElement.innerHTML='<div><img src=pizarra.png style="width:120px; height:100px;"><h1>This is a very big message window</h1><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas semper leo ac euismod euismod. Ut efficitur, sem quis laoreet luctus, turpis leo accumsan dolor, quis scelerisque nibh metus hendrerit elit. Phasellus in finibus augue. Morbi nec metus et risus scelerisque scelerisque id non urna. Sed hendrerit at metus viverra pellentesque. Integer tempus nunc dolor, et vehicula nunc condimentum dignissim. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nullam dapibus ipsum a ante commodo sodales. Integer turpis nisl, ultrices sit amet condimentum ac, rhoncus eget magna. Phasellus quis felis eros. Donec porttitor cursus odio, non scelerisque nisl interdum quis. Cras in egestas lectus.<img src="Oxygen480-actions-key-enter.svg.png" style="width:240px; height:240px;">';
-            var imgs=mainElement.querySelectorAll('img');
-            Array.prototype.forEach.call(imgs,function(img){
-                img.onclick=function(){ done(img.src); };
-            });
-        }).then(function(result){
-            results.textContent+='\n'+'You typed: '+result;
-        }).catch(seeReject);
-    });
+    var thisBig=function(opts){
+        return function(){
+            dialogPromise(function(mainElement, done){
+                mainElement.innerHTML='<div><img src=pizarra.png style="width:120px; height:100px;"><h1>This is a very big message window</h1><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas semper leo ac euismod euismod. Ut efficitur, sem quis laoreet luctus, turpis leo accumsan dolor, quis scelerisque nibh metus hendrerit elit. Phasellus in finibus augue. Morbi nec metus et risus scelerisque scelerisque id non urna. Sed hendrerit at metus viverra pellentesque. Integer tempus nunc dolor, et vehicula nunc condimentum dignissim. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nullam dapibus ipsum a ante commodo sodales. Integer turpis nisl, ultrices sit amet condimentum ac, rhoncus eget magna. Phasellus quis felis eros. Donec porttitor cursus odio, non scelerisque nisl interdum quis. Cras in egestas lectus.<img src="Oxygen480-actions-key-enter.svg.png" style="width:240px; height:240px;">';
+                var imgs=mainElement.querySelectorAll('img');
+                Array.prototype.forEach.call(imgs,function(img){
+                    img.onclick=function(){ done(img.src); };
+                });
+            },opts||{}).then(function(result){
+                results.textContent+='\n'+'You typed: '+result;
+            }).catch(seeReject);
+        };
+    };
+    bigdialog_example1.addEventListener('click', thisBig());
+    big_under.addEventListener('click', thisBig({underElement:big_under}));
     var thisMenu=function(opts){
         return function(){
             miniMenuPromise([
@@ -98,6 +108,7 @@ window.addEventListener('load', function(){
     };
     menu_example1.addEventListener('click', thisMenu());
     menu_example2.addEventListener('click', thisMenu({underElement:menu_example2, withCloseButton:false}));
+    menu_example3.addEventListener('click', thisMenu({underElement:menu_example3, withCloseButton:false, imgStyle:{width:'32px'}}));
     set_spanish.addEventListener('click', function(){
         DialogPromise.messages=DialogPromise.es;
     });

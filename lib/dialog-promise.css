@@ -13,14 +13,16 @@
     position: fixed;
     top: 5%;
     left: 5%;
-    /*
-    bottom: 5%;
-    right: 5%;
-    */
-    /* margin-top: -10px; */
-    /* margin-left: -100px; */
     -webkit-animation: animatezoom 0.3s;
     animation: animatezoom 0.3s;
+}
+
+.dialog-promise[docked=under]{
+    transform-origin: top left;
+}
+
+.dialog-promise[docked=under-right]{
+    transform-origin: top right;
 }
 
 .dialog-promise>*{
@@ -36,12 +38,17 @@
 }
 
 @-webkit-keyframes animatezoom {
-    from {-webkit-transform: scale(0.5)}
+    from {-webkit-transform: scale(0.25)}
     to {-webkit-transform: scale(1)}
 }
 
 @keyframes animatezoom {
-    from {transform: scale(0.5)}
+    from {transform: scale(0.25)}
+    to {transform: scale(1)}
+}
+
+@keyframes animatezoom {
+    from {transform: scale(0.25)}
     to {transform: scale(1)}
 }
 

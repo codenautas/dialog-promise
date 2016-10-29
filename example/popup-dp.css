@@ -1,3 +1,7 @@
-.dialog-promise{
+.for-test .dialog-promise{
     border: 1px solid blue;
+    /*
+    -webkit-animation: animatezoom 3s;
+    animation: animatezoom 3s;
+    */
 }
