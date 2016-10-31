@@ -106,17 +106,28 @@ function example3(button){
 ## Opciones
 Las opciones pueden aplicarse a todas las funciones de este módulo
 
-opción         |uso
----------------|-------------------------------------
-`underElement` | elemento bajo el cual situar la ventana, de no especificarse se centrará en la pantalla
+opción            |predeterminado|uso
+------------------|--------------|-------------------------------------
+`underElement`    |`null`        |elemento bajo el cual situar la ventana, de no especificarse se centrará en la pantalla
+`withCloseButton` |`true`        |si coloca la cruz de cerrar en la esquina superior derecha
+`mainAttrs`       |`{}`          |atributos para la ventana principal
+`reject`          |`true`        |si se rechaza la promesa al devolver cerrando de la cruz o clickeando fuera de la pantalla o presionando escape
+`closeValue`      |`undefined`   |valor que se envía al cerrar con cruz, escape o click fuera del díalogo
+`buttonDef`       |`{label:'Ok', value:true}`|descripción del botón principal *(solo para `alertPrimse`)*
+
 
 <!--lang:en--]
 ## Options
 The options could be passed to all of these functions
 
-option         |use
----------------|-------------------------------------
-`underElement` | the dialog apears below this element. If no element is passed the dialog apears in the center of the window
+option            |def           |use
+------------------|--------------|----------------------------------
+`underElement`    |`null`        |the dialog apears below this element. If no element is passed the dialog apears in the center of the window
+`withCloseButton` |`true`        |display the close button
+`mainAttrs`       |`{}`          |attributes for main dialog window
+`reject`          |`true`        |true if rejects the promise when close by the close button, Esc key or clicking outside of the dialog
+`closeValue`      |`undefined`   |value if rejects the promise when close by the close button, Esc key or clicking outside of the dialog
+`buttonDef`       |`{label:'Ok', value:true}`|main button of the alertPromise dialog
 
 <!--lang:es-->
 ## Licencia

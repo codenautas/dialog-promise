@@ -75,9 +75,14 @@ function example3(button){
 ## Options
 The options could be passed to all of these functions
 
-option         |use
----------------|-------------------------------------
-`underElement` | the dialog apears below this element. If no element is passed the dialog apears in the center of the window
+option            |def           |use
+------------------|--------------|----------------------------------
+`underElement`    |`null`        |the dialog apears below this element. If no element is passed the dialog apears in the center of the window
+`withCloseButton` |`true`        |display the close button
+`mainAttrs`       |`{}`          |attributes for main dialog window
+`reject`          |`true`        |true if rejects the promise when close by the close button, Esc key or clicking outside of the dialog
+`closeValue`      |`undefined`   |value if rejects the promise when close by the close button, Esc key or clicking outside of the dialog
+`buttonDef`       |`{label:'Ok', value:true}`|main button of the alertPromise dialog
 
 ## License
 
