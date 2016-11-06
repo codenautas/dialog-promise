@@ -76,32 +76,6 @@ function  |returned value
 
 If `Escape` is pressed or the mouse clicked outside the dialog the function returns `undefined`.
 
-[!--lang:*-->
-## miniMenuPromise(elementsList[, opts])
-<!--lang:es-->
-Despliega un menú
-
-<!--lang:en--]
-Display a menu
-
-[!--lang:*-->
-
-```html
-<script src="dialog-promise.js"></script>
-<button id=theButton onclick='example3(this)'>example</button>
-<script>
-function example3(button){
-    miniMenuPromise([
-        {value:'ar', img:'ar.png', label:'Argentina'},
-        {value:'cl', img:'cl.png', label:'Chile'},
-        {value:'uy', img:'uy.png', label:'Uruguay'},
-    ], {underElement: theButton}).then(function(option){
-        return alertPromise("val = "+option);
-    });
-}
-</script>
-```
-
 <!--lang:es-->
 ## Opciones
 Las opciones pueden aplicarse a todas las funciones de este módulo
@@ -128,6 +102,58 @@ option            |def           |use
 `reject`          |`true`        |true if rejects the promise when close by the close button, Esc key or clicking outside of the dialog
 `closeValue`      |`undefined`   |value if rejects the promise when close by the close button, Esc key or clicking outside of the dialog
 `buttonDef`       |`{label:'Ok', value:true}`|main button of the alertPromise dialog
+
+[!--lang:*-->
+## miniMenuPromise(elementsList[, opts])
+<!--lang:es-->
+Despliega un menú
+
+<!--lang:en--]
+Display a menu
+
+[!--lang:*-->
+
+```html
+<script src="dialog-promise.js"></script>
+<button id=theButton onclick='example3(this)'>example</button>
+<script>
+function example3(button){
+    miniMenuPromise([
+        {value:'ar', img:'ar.png', label:'Argentina'},
+        {value:'cl', img:'cl.png', label:'Chile'},
+        {value:'uy', img:'uy.png', label:'Uruguay'},
+    ], {underElement: theButton}).then(function(option){
+        return alertPromise("val = "+option);
+    });
+}
+</script>
+```
+<!--lang:es-->
+### elementList en miniMenuPromise
+
+Cada una de los renglones de element list puede tener
+
+opción            |uso
+------------------|-------------------------------------
+`label`           |texto a desplegar
+`value`           |valor que se devuelve al clickear. Si no está especificado el texto no se puede clickear
+`img`             |Url de la imagen
+`startGroup`      |si comienza un grupo (pone una pequeña linea de separación)
+`imgStyle`        |objeto con los atributos de estilo de la imagen. Es importante poner el tamaño para el autocentrado
+`fun`             |función alternativa que se utiliza para armar las celdas de la fila
+
+<!--lang:en--]
+### miniMenuPromise elementList
+The options could be passed to all of these functions
+
+option            |use
+------------------|----------------------------------
+`label`           |text to show
+`value`           |value when click. If not set the row is not clickeable.
+`img`             |image url
+`startGroup`      |if it starts a group (puts a little line)
+`imgStyle`        |object with style attributes for the image
+`fun`             |alternate function to create cells of the row
 
 <!--lang:es-->
 ## Licencia

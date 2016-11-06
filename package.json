@@ -1,7 +1,7 @@
 {
   "name": "dialog-promise",
   "description": "Dialog that returns promises",
-  "version": "0.3.1",
+  "version": "0.3.2",
   "author": "Codenautas <codenautas@googlegroups.com>",
   "repository": "codenautas/dialog-promise",
   "license": "MIT",
@@ -16,7 +16,7 @@
     "es6-promise": "~4.0.5",
     "phantomjs-prebuilt": "~2.1.13",
     
-    "best-globals": "~0.5.3"
+    "best-globals": "~0.5.4"
   },
   "engines": {
     "node": ">= 0.12"

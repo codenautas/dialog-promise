@@ -58,6 +58,7 @@ function seeReject(err){
 }
 
 window.addEventListener('load', function(){
+    var globalExampleValue=5;
     results.textContent+='Initiated';
     add_lines.addEventListener('click', function(){
         for(var i=1; i<=1000; i++){
@@ -101,6 +102,27 @@ window.addEventListener('load', function(){
                 {value:'1a', img:'1a.png', label:'first option'},
                 {value:'2b', img:'2b.png', label:'second b'},
                 {value:'3c', img:'3c.png', label:'last one'},
+                {label:'other options', startGroup:true},
+                {value:'4d', label:'four seasons'},
+                {value:'5f', label:'fifht ef'},
+                {fun:function(tr, opt){
+                    var td=tr.insertCell();
+                    var label=document.createElement('label');
+                    label.textContent=opt.label;
+                    td.appendChild(label);
+                    td.colSpan=2;
+                    var input=document.createElement('input');
+                    input.type='number';
+                    input.value=globalExampleValue;
+                    input.onchange=function(){
+                        globalExampleValue=input.value;
+                    }
+                    input.style.width='30px';
+                    input.style.border='1px solid gray';
+                    input.style.margin='2px';
+                    td.appendChild(input);
+                    tr.className='';
+                }, label:'Num'}
             ],opts).then(function(result){
                 results.textContent+='\n'+'You typed: '+result;
             }).catch(seeReject);
