@@ -16,7 +16,10 @@
           <button id=confirm_example1>Confirm example</button>
         </p>
         <p>
-          <button id=prompt_example1>Prompt example</button>
+          <button id=prompt_example1 title="without default">Prompt example</button>
+        </p>
+        <p>
+          <button id=prompt_example2 title="here will be the entered value">Prompt example with default</button>
         </p>
         <p>
           <button id=menu_example1>menu example</button>
@@ -79,6 +82,12 @@ window.addEventListener('load', function(){
     prompt_example1.addEventListener('click', function(){
         promptPromise('What is your name?').then(function(result){
             results.textContent+='\n'+'You typed: '+result;
+        }).catch(seeReject);
+    });
+    prompt_example2.addEventListener('click', function(){
+        promptPromise('What is your name?','Example Two').then(function(result){
+            results.textContent+='\n'+'You typed: '+result;
+            prompt_example2.title=result;
         }).catch(seeReject);
     });
     var thisBig=function(opts){

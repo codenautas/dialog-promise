@@ -9,6 +9,17 @@ casper.echo("path "+path);
 
 var keys;
 
+function sendKey(keysOrKey){
+    // https://github.com/ariya/phantomjs/commit/cab2635e66d74b7e665c44400b8b20a8f225153a
+    if(typeof keysOrKey === "string"){
+        casper.page.sendEvent('keypress', keysOrKey);
+    }else{
+        var sendEvent = casper.page.sendEvent;
+        sendEvent('keydown', keysOrKey);
+        sendEvent('keyup', keysOrKey);
+    }
+}
+
 casper.test.begin('Setup', function(test) {
     function clickOver(id){
         var box = casper.page.evaluate(function(id) {
@@ -30,7 +41,21 @@ casper.test.begin('Setup', function(test) {
             test.assertVisible('.dialog-promise', 'dialog is visible');
             clickOver('#alert_example1');
             test.assertDoesntExist('.dialog-promise', 'dialog not exists 2');
-            test.done();
+            clickOver('#prompt_example2');
+            casper.wait(1000, function() {
+                test.assertVisible('.dialog-promise', 'dialog is visible 2');
+                sendKey(keys.Return);
+                this.capture('local-capture2b.png');
+                test.assertDoesntExist('.dialog-promise', 'dialog not exists 3');
+                casper.wait(200, function() {
+                    var title=casper.evaluate(function(){
+                        return prompt_example2.title;
+                    });
+                    this.echo("title "+title);
+                    test.assertEqual(title,"Example Two");
+                    test.done();
+                });
+            });
         });
     }).run(function() {
         test.done();
