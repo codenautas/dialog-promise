@@ -41,7 +41,9 @@ Implements `alert`, `confirm` & `prompt` functions with Promises
 <button onclick='example2(this)'>example</button>
 <script>
 function example2(button){
-    promptPromise("What's your name?").then(function(name){
+    var theName = "previous Name";
+    promptPromise("What's your name?", theName).then(function(name){
+        theName = name;
         return alertPromise("Hi "+name);
     }).then(function(){
         button.textContent='try again!';
