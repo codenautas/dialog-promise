@@ -95,7 +95,8 @@ option            |use
 `img`             |image url
 `startGroup`      |if it starts a group (puts a little line)
 `imgStyle`        |object with style attributes for the image
-`fun`             |alternate function to create cells of the row
+`displayFun`      |alternate function to create cells of the row
+`doneFun`         |alternate function to callback when 
 
 ## License
 

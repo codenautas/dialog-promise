@@ -142,7 +142,8 @@ opción            |uso
 `img`             |Url de la imagen
 `startGroup`      |si comienza un grupo (pone una pequeña linea de separación)
 `imgStyle`        |objeto con los atributos de estilo de la imagen. Es importante poner el tamaño para el autocentrado
-`fun`             |función alternativa que se utiliza para armar las celdas de la fila
+`displayFun`      |función alternativa que se utiliza para armar las celdas de la fila
+`doneFun`         |función alternativa que se llamará al seleccionar el elemento del menú (en vez de resolver la promesa)
 
 <!--lang:en--]
 ### miniMenuPromise elementList
@@ -155,7 +156,8 @@ option            |use
 `img`             |image url
 `startGroup`      |if it starts a group (puts a little line)
 `imgStyle`        |object with style attributes for the image
-`fun`             |alternate function to create cells of the row
+`displayFun`      |alternate function to create cells of the row
+`doneFun`         |alternate function to callback when the option was selected instead of resolving the promise
 
 <!--lang:es-->
 ## Licencia
