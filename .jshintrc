@@ -3,6 +3,7 @@
     "forin": true,
     "curly": true,
     "browser": true,
+    "eqnull": true,
     "strict": "global",
     "predef": [ "module", "Promise" ]
 }

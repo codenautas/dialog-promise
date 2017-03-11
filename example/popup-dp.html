@@ -16,6 +16,12 @@
           <button id=confirm_example1>Confirm example</button>
         </p>
         <p>
+          <button id=confirm_example2>Confirm example (don't ask)</button>
+        </p>
+        <p>
+          <button id=confirm_example3>Confirm example (don't ask, default)</button>
+        </p>
+        <p>
           <button id=prompt_example1 title="without default">Prompt example</button>
         </p>
         <p>
@@ -63,6 +69,8 @@ function seeReject(err){
     results.textContent+='\n'+'STACK: '+err.stack;
 }
 
+var askForNoRepeatRepo={timeout:5000};
+
 window.addEventListener('load', function(){
     var globalExampleValue=5;
     results.textContent+='Initiated';
@@ -79,6 +87,16 @@ window.addEventListener('load', function(){
     });
     confirm_example1.addEventListener('click', function(){
         confirmPromise('Do you like this example?').then(function(result){
+            results.textContent+='\n'+'Like confirm: '+result;
+        }).catch(seeReject);
+    });
+    confirm_example2.addEventListener('click', function(){
+        confirmPromise('Do you like this example?',{askForNoRepeat:askForNoRepeatRepo}).then(function(result){
+            results.textContent+='\n'+'Like confirm: '+result;
+        }).catch(seeReject);
+    });
+    confirm_example3.addEventListener('click', function(){
+        confirmPromise('Do you like this example?',{askForNoRepeat:'do-you'}).then(function(result){
             results.textContent+='\n'+'Like confirm: '+result;
         }).catch(seeReject);
     });

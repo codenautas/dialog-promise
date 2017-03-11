@@ -37,6 +37,7 @@ Implements `alert`, `confirm` & `prompt` functions with Promises
 [!--lang:*-->
 
 ```html
+<link rel="stylesheet" type="text/css" href="dialog-promise.css">
 <script src="dialog-promise.js"></script>
 <button onclick='example2(this)'>example</button>
 <script>
@@ -44,7 +45,9 @@ function example2(button){
     var theName = "previous Name";
     promptPromise("What's your name?", theName).then(function(name){
         theName = name;
-        return alertPromise("Hi "+name);
+        return confirmPromise("Do you want to know my name?");
+    }).then(function(result){
+        return alertPromise("Hi "+theName+". My name is DialogPromise");
     }).then(function(){
         button.textContent='try again!';
     });
@@ -64,7 +67,7 @@ función   |valor devuelto
 `confirm` |`true` o `false` según el botón presionado
 `prompt`  |un string con el valor ingresado
 
-Si se presiona `Escape` o se hace `click` fuera de la ventana de diálogo la función devuelve `undefined`.
+Si se presiona `Escape` o se hace `click` fuera de la ventana de diálogo la función devuelve una promesa rechazada.
 
 <!--lang:en--]
 Recives a mensage (and an object with options). 
@@ -76,7 +79,7 @@ function  |returned value
 `confirm` |`true` or `false` 
 `prompt`  |a string with the entered text
 
-If `Escape` is pressed or the mouse clicked outside the dialog the function returns `undefined`.
+If `Escape` is pressed or the mouse clicked outside the dialog the function returns a rejected promise.
 
 <!--lang:es-->
 ## Opciones
@@ -88,8 +91,9 @@ opción            |predeterminado|uso
 `withCloseButton` |`true`        |si coloca la cruz de cerrar en la esquina superior derecha
 `mainAttrs`       |`{}`          |atributos para la ventana principal
 `reject`          |`true`        |si se rechaza la promesa al devolver cerrando de la cruz o clickeando fuera de la pantalla o presionando escape
-`closeValue`      |`undefined`   |valor que se envía al cerrar con cruz, escape o click fuera del díalogo
+`closeValue`      |`undefined`   |valor que se envía al cerrar con cruz, escape o click fuera del díalogo cuando no se rechazan promesas
 `buttonDef`       |`{label:'Ok', value:true}`|descripción del botón principal *(solo para `alertPrimse`)*
+`askForNoRepeat`  |`false`       |id (u objeto) para darle la posiblidad al usuario de no repetir la pregunta y acordarse de la respuesta
 
 
 <!--lang:en--]
@@ -104,6 +108,7 @@ option            |def           |use
 `reject`          |`true`        |true if rejects the promise when close by the close button, Esc key or clicking outside of the dialog
 `closeValue`      |`undefined`   |value if rejects the promise when close by the close button, Esc key or clicking outside of the dialog
 `buttonDef`       |`{label:'Ok', value:true}`|main button of the alertPromise dialog
+`askForNoRepeat`  |`false`       |id (or object) to permits the user to ask to remember de answer 
 
 [!--lang:*-->
 ## miniMenuPromise(elementsList[, opts])

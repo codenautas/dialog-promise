@@ -26,6 +26,7 @@ Implements `alert`, `confirm` & `prompt` functions with Promises
 ## Use
 
 ```html
+<link rel="stylesheet" type="text/css" href="dialog-promise.css">
 <script src="dialog-promise.js"></script>
 <button onclick='example2(this)'>example</button>
 <script>
@@ -33,7 +34,9 @@ function example2(button){
     var theName = "previous Name";
     promptPromise("What's your name?", theName).then(function(name){
         theName = name;
-        return alertPromise("Hi "+name);
+        return confirmPromise("Do you want to know my name?");
+    }).then(function(result){
+        return alertPromise("Hi "+theName+". My name is DialogPromise");
     }).then(function(){
         button.textContent='try again!';
     });
@@ -52,7 +55,7 @@ function  |returned value
 `confirm` |`true` or `false`
 `prompt`  |a string with the entered text
 
-If `Escape` is pressed or the mouse clicked outside the dialog the function returns `undefined`.
+If `Escape` is pressed or the mouse clicked outside the dialog the function returns a rejected promise.
 
 ## Options
 The options could be passed to all of these functions
@@ -65,6 +68,7 @@ option            |def           |use
 `reject`          |`true`        |true if rejects the promise when close by the close button, Esc key or clicking outside of the dialog
 `closeValue`      |`undefined`   |value if rejects the promise when close by the close button, Esc key or clicking outside of the dialog
 `buttonDef`       |`{label:'Ok', value:true}`|main button of the alertPromise dialog
+`askForNoRepeat`  |`false`       |id (or object) to permits the user to ask to remember de answer
 
 ## miniMenuPromise(elementsList[, opts])
 Display a menu
@@ -96,7 +100,7 @@ option            |use
 `startGroup`      |if it starts a group (puts a little line)
 `imgStyle`        |object with style attributes for the image
 `displayFun`      |alternate function to create cells of the row
-`doneFun`         |alternate function to callback when 
+`doneFun`         |alternate function to callback when the option was selected instead of resolving the promise
 
 ## License
 
