@@ -139,9 +139,14 @@ window.addEventListener('load', function(){
                 {value:'2b', img:'2b.png', label:'second b'},
                 {value:'3c', img:'3c.png', label:'last one'},
                 {label:'other options', startGroup:true},
-                {value:'4d', label:'four seasons'},
-                {value:'5f', label:'fifht ef'},
-                {fun:function(tr, opt){
+                {value:'4d', label:'four seasons', doneFun:function(){
+                    alertPromise('Non acopled. The menu was gone');
+                    return '4d';
+                }},
+                {value:'5f', label:'fifht ef', doneFun:function(){
+                    return confirmPromise('Acopled. The menu is there');
+                }},
+                {displayFun:function(tr, opt){
                     var td=tr.insertCell();
                     var label=document.createElement('label');
                     label.textContent=opt.label;
