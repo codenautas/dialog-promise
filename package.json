@@ -22,8 +22,7 @@
     "node": ">= 0.12"
   },
   "scripts": {
-    "test": "node test/start-tests.js",
-    "test-win": "test\\do-tests"
+    "test": "node test/start-tests.js"
   },
   "qa-control": {
     "package-version": "0.3.0",
