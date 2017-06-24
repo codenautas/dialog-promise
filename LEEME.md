@@ -149,6 +149,7 @@ opción            |uso
 `imgStyle`        |objeto con los atributos de estilo de la imagen. Es importante poner el tamaño para el autocentrado
 `displayFun`      |función alternativa que se utiliza para armar las celdas de la fila
 `doneFun`         |función alternativa que se llamará al seleccionar el elemento del menú (en vez de resolver la promesa)
+`labels`          |lista de textos a desplegar (encolumnados en una tabla)
 
 <!--lang:en--]
 ### miniMenuPromise elementList
@@ -163,6 +164,7 @@ option            |use
 `imgStyle`        |object with style attributes for the image
 `displayFun`      |alternate function to create cells of the row
 `doneFun`         |alternate function to callback when the option was selected instead of resolving the promise
+`labels`          |array of texts to show (in table)
 
 <!--lang:es-->
 ## Licencia

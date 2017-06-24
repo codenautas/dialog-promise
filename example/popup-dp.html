@@ -36,6 +36,9 @@
         <p>
           <button id=menu_example2>menu without [X] here</button>
         </p>
+        <p>
+          <button id=menu_example4>múltiple menu</button>
+        </p>
         <p style="position: absolute; top:100px; right:20px">
           <button id=menu_example3>menu under</button>
         </p>
@@ -172,6 +175,15 @@ window.addEventListener('load', function(){
     menu_example1.addEventListener('click', thisMenu());
     menu_example2.addEventListener('click', thisMenu({underElement:menu_example2, withCloseButton:false}));
     menu_example3.addEventListener('click', thisMenu({underElement:menu_example3, withCloseButton:false, imgStyle:{width:'32px'}}));
+    menu_example4.addEventListener('click', function(){
+        miniMenuPromise([
+            {value:'1a', img:'1a.png', labels:['first option','la primera']},
+            {value:'2b', img:'2b.png', labels:['second b','2°']},
+            {value:'3c', img:'3c.png', labels:['last one']},
+        ]).then(function(result){
+            results.textContent+='\n'+'You typed: '+result;
+        }).catch(seeReject);
+    });
     set_spanish.addEventListener('click', function(){
         DialogPromise.messages=DialogPromise.es;
     });
