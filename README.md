@@ -39,6 +39,8 @@ function example2(button){
         return alertPromise("Hi "+theName+". My name is DialogPromise");
     }).then(function(){
         button.textContent='try again!';
+    },function(err){
+        console.log("User Escapes. Don't insist.")
     });
 }
 </script>
@@ -101,6 +103,7 @@ option            |use
 `imgStyle`        |object with style attributes for the image
 `displayFun`      |alternate function to create cells of the row
 `doneFun`         |alternate function to callback when the option was selected instead of resolving the promise
+`labels`          |array of texts to show (in table)
 
 ## License
 
