@@ -50,6 +50,8 @@ function example2(button){
         return alertPromise("Hi "+theName+". My name is DialogPromise");
     }).then(function(){
         button.textContent='try again!';
+    },function(err){
+        console.log("User Escapes. Don't insist.")
     });
 }
 </script>
