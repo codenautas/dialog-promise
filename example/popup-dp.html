@@ -5,6 +5,8 @@
     <title>Dialog Promise examples</title>
     <link rel="stylesheet" type="text/css" href="popup-dp.css">
     <link rel="stylesheet" type="text/css" href="../lib/dialog-promise.css">
+    <link href="icon-dp.png" rel="shortcut icon"  type="image/png">,
+    <link href="icon-dp.png" rel="apple-touch-icon">,
   </head>
   <body class="for-test">
     <h1>Dialog Promise examples</h1>
@@ -286,6 +288,7 @@ window.addEventListener('load', function(){
     toggle_reject.addEventListener('click', function(){
         DialogPromise.defaultOpts.reject=!DialogPromise.defaultOpts.reject;
     });
+    DialogPromise.path.img='../lib/';
 });
 
 window.addEventListener('error', function(err){

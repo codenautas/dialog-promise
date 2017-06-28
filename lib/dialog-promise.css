@@ -29,12 +29,15 @@
     margin: 10px 10px 5px 10px; 
 }
 
-.dialog-promise>div:nth-child(2){
-    margin-top: 20px; 
-}
-
 .dialog-promise button{
     margin:10px;
+}
+
+.dialog-promise .dialog-promise-upper-div{
+    /* background-color: #F9C;  */
+    margin: 0px;
+    padding: 0px; 
+    text-align: left;
 }
 
 @-webkit-keyframes animatezoom {
@@ -67,18 +70,25 @@
 }
 
 .dialog-promise .dialog-promise-close-button{
-    margin:0px;
     float:right;
-    background-color:red;
-    width:24px;
-    height:16px;
-    color:white;
+    margin:0px;
+    border:0px;
+    padding:0px;
+    left:auto;
+    width:24px; 
+    /* height:16px; */
     font-weight:bold;
-    font-size:60%;
+    color:gray;
+    /* font-size:60%; */
+}
+
+.dialog-promise .dialog-promise-close-button:hover{
+    background-color:red;
+    color:white;
 }
 
 .dialog-promise-close-button:before{
-    content:'X';
+    content:'×';
 }
 
 .dialog-menu label{
