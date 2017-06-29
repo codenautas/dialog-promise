@@ -9,12 +9,12 @@
     max-width: 90%;
     height: auto;
     max-height: 90%;
-    overflow: auto;
     position: fixed;
     top: 5%;
     left: 5%;
     -webkit-animation: animatezoom 0.3s;
     animation: animatezoom 0.3s;
+    overflow: auto;
 }
 
 .dialog-promise[docked=under]{
@@ -25,7 +25,11 @@
     transform-origin: top right;
 }
 
-.dialog-promise>*{
+.dialog-promise-inner-div{
+    overflow: auto;
+}
+
+.dialog-promise-inner-div>*{
     margin: 10px 10px 5px 10px; 
 }
 
