@@ -1,7 +1,7 @@
 {
   "name": "dialog-promise",
   "description": "Dialog that returns promises",
-  "version": "0.8.1",
+  "version": "0.8.2",
   "author": "Codenautas <codenautas@googlegroups.com>",
   "repository": "codenautas/dialog-promise",
   "license": "MIT",
@@ -14,9 +14,9 @@
   "devDependencies": {
     "casperjs": "~1.1.4",
     "es6-promise": "~4.1.1",
-    "phantomjs-prebuilt": "~2.1.14",
+    "phantomjs-prebuilt": "~2.1.15",
     
-    "best-globals": "~0.9.13"
+    "best-globals": "~0.10.1"
   },
   "engines": {
     "node": ">= 0.12"

@@ -280,7 +280,7 @@ window.addEventListener('load', function(){
         }).catch(seeReject);
     });
     set_spanish.addEventListener('click', function(){
-        DialogPromise.messages=DialogPromise.es;
+        DialogPromise.messages=DialogPromise.i18n.messages.es;
     });
     toggle_close.addEventListener('click', function(){
         DialogPromise.defaultOpts.withCloseButton=!DialogPromise.defaultOpts.withCloseButton;
