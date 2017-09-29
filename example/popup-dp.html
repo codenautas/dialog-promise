@@ -47,6 +47,9 @@
         <p style="position: absolute; top:100px; right:20px">
           <button id=menu_example3>menu under</button>
         </p>
+        <p style="position: absolute; top:130px; right:20px">
+          <button id=be_wider>be wider</button>
+        </p>
         <p>
           <button id=bigdialog_example1>Big dialog</button>
         </p>
@@ -287,6 +290,9 @@ window.addEventListener('load', function(){
     });
     toggle_reject.addEventListener('click', function(){
         DialogPromise.defaultOpts.reject=!DialogPromise.defaultOpts.reject;
+    });
+    be_wider.addEventListener('click', function(){
+        document.body.style.width='2000px';
     });
     DialogPromise.path.img='../lib/';
 });
