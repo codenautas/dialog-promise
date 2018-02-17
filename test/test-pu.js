@@ -22,7 +22,7 @@ describe("interactive ",function(){
         server = new Server({port:43332});
         console.log("starting server");
         await server.start();
-        browser = await puppeteer.launch(process.env.TRAVIS?null:{headless: process.env.TRAVIS || !config.test["view-chrome"], slowMo: 50});
+        browser = await puppeteer.launch({headless: process.env.TRAVIS || !config.test["view-chrome"], slowMo: 50});
         page = await browser.newPage();
         page.on('console', msg => { 
             console.log('console.'+msg.type(), msg.text()) 
@@ -32,6 +32,7 @@ describe("interactive ",function(){
         console.log('system ready');
     });
     it("open and close dialogs", async function(){
+        this.timeout(50000);
         await page.waitForSelector('#alert_example1');
         var none = await page.$$('.dialog_promise');
         discrepances.showAndThrow(none, [], {showContext:'dialog must not exists'});
