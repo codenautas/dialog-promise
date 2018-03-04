@@ -1,6 +1,6 @@
 "use strict";
 
-var Server = require('server4test');
+var Server4Test = require('server4test').Server4Test;
 
 const puppeteer = require('puppeteer');
 
@@ -19,7 +19,7 @@ describe("interactive ",function(){
     var server;
     before(async function(){
         this.timeout(50000);
-        server = new Server({port:43332});
+        server = new Server4Test({port:43332});
         console.log("starting server");
         await server.start();
         browser = await puppeteer.launch({headless: process.env.TRAVIS || !config.test["view-chrome"], slowMo: 50});
