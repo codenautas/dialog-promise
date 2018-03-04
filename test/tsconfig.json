@@ -1,0 +1,14 @@
+{
+    "compilerOptions": {
+        "outDir": "./local-built",
+        "declaration": true,
+        "module": "UMD",
+        "target": "es5",
+        "sourceMap": true,
+        "moduleResolution": "node",
+        "lib": [ "es2015" ]
+    },
+    "include":[
+        "test-*.ts"
+    ]
+}

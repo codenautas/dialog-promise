@@ -1,11 +1,9 @@
-"use strict";
+import {Server4Test} from 'server4test';
+import * as puppeteer from 'puppeteer';
+import * as MiniTools  from 'mini-tools';
+import * as discrepances from 'discrepances';
 
-var Server4Test = require('server4test').Server4Test;
-
-const puppeteer = require('puppeteer');
-
-const MiniTools = require('mini-tools');
-const discrepances = require('discrepances');
+import 'mocha';
 
 const config = {
     test:{

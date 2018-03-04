@@ -11,6 +11,7 @@
   ],
   "dependencies": {},
   "devDependencies": {
+    "@types/mocha": "~2.2.48",
     "mocha": "~5.0.1",
     "puppeteer": "~1.1.1",
     "best-globals": "~0.10.4",
@@ -21,7 +22,7 @@
     "node": ">= 8"
   },
   "scripts": {
-    "test": "mocha test/test*.js"
+    "test": "tsc -p test && mocha test/local-built/test*.js"
   },
   "qa-control": {
     "package-version": "0.3.0",
