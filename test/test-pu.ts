@@ -12,15 +12,15 @@ const config = {
 };
 
 describe("interactive ",function(){
-    var browser;
-    var page;
-    var server;
+    var browser: puppeteer.Browser;
+    var page   : puppeteer.Page;
+    var server : Server4Test;
     before(async function(){
         this.timeout(50000);
         server = new Server4Test({port:43332});
         console.log("starting server");
         await server.start();
-        browser = await puppeteer.launch({headless: process.env.TRAVIS || !config.test["view-chrome"], slowMo: 50});
+        browser = await puppeteer.launch({headless: !!process.env.TRAVIS || !config.test["view-chrome"], slowMo: 50});
         page = await browser.newPage();
         page.on('console', msg => { 
             console.log('console.'+msg.type(), msg.text()) 
@@ -45,7 +45,7 @@ describe("interactive ",function(){
         var none = await page.$$('.dialog_promise');
         discrepances.showAndThrow(none, [], {showContext:'dialog must not exists (part 3)'});
         await page.waitForSelector('#prompt_example2', {visible:true});
-        var title = await page.$eval('#prompt_example2', prompt_example2 => prompt_example2.title);
+        var title = await page.$eval('#prompt_example2', prompt_example2 => (prompt_example2 as HTMLElement).title);
         discrepances.showAndThrow(title,"Example Two");
         return 1;
     });
@@ -58,5 +58,4 @@ describe("interactive ",function(){
 
 process.on('unhandledRejection', (reason, p) => {
   console.log('Unhandled Rejection at: Promise', p, 'reason:', reason);
-  // application specific logging, throwing an error, or other logic here
 });
