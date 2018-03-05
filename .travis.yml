@@ -4,6 +4,8 @@ node_js:
   - "9"
 matrix:
   fast_finish: true
+before_install:
+- npm install -g typescript
 script: "npm test"
 dist: trusty
 sudo: required
