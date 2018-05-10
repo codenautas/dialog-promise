@@ -188,6 +188,7 @@ window.addEventListener('load', function(){
             {value:'1a', img:'1a.png', labels:['first option','la primera']},
             {value:'2b', img:'2b.png', labels:['second b','2°']},
             {value:'3c', img:'3c.png', labels:['last one']},
+            {value:'go', img:'icon-dp.png',labels:['refresh this'],href:window.location.href+'?refreshed1=1'}
         ]).then(function(result){
             results.textContent+='\n'+'You typed: '+result;
         }).catch(seeReject);
