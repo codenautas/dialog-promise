@@ -174,6 +174,9 @@ window.addEventListener('load', function(){
                     input.style.margin='2px';
                     td.appendChild(input);
                     tr.className='';
+                    tr.dialogPromiseRowDone=function(){
+                        input.focus();
+                    }
                 }, label:'Num'}
             ],opts).then(function(result){
                 results.textContent+='\n'+'You typed: '+result;
