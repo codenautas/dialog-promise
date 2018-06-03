@@ -134,3 +134,21 @@
 .dialog-promise-dont-ask{
     font-size:75%
 }
+
+[key-selected] td{
+    background-color:#CCE;
+    opacity: 0.9;
+}
+
+.dialog-promise-div-button{
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  border: 0px;
+  background-color: transparent;
+  font-size: 100%;
+}
+
+.dialog-promise-div-button:focus{
+    outline:0;
+}
