@@ -1,7 +1,7 @@
 {
   "name": "dialog-promise",
   "description": "Dialog that returns promises",
-  "version": "0.9.0",
+  "version": "0.9.1",
   "author": "Codenautas <codenautas@googlegroups.com>",
   "repository": "codenautas/dialog-promise",
   "license": "MIT",
