@@ -95,6 +95,7 @@ opción            |predeterminado|uso
 `reject`          |`true`        |si se rechaza la promesa al devolver cerrando de la cruz o clickeando fuera de la pantalla o presionando escape
 `closeValue`      |`undefined`   |valor que se envía al cerrar con cruz, escape o click fuera del díalogo cuando no se rechazan promesas
 `buttonDef`       |`{label:'Ok', value:true}`|descripción del botón principal *(solo para `alertPrimse`)*
+`buttonsDef`       |`{label:'Ok', value:true, attributes:[{name: 'attrname', value: 'attrvalue'},{name: 'other', value: true}]}`|descripción de los botones
 `askForNoRepeat`  |`false`       |id (u objeto) para darle la posiblidad al usuario de no repetir la pregunta y acordarse de la respuesta
 
 
@@ -110,6 +111,7 @@ option            |def           |use
 `reject`          |`true`        |true if rejects the promise when close by the close button, Esc key or clicking outside of the dialog
 `closeValue`      |`undefined`   |value if rejects the promise when close by the close button, Esc key or clicking outside of the dialog
 `buttonDef`       |`{label:'Ok', value:true}`|main button of the alertPromise dialog
+`buttonsDef`       |`{label:'Ok', value:true, attributes:[{name: 'attrname', value: 'attrvalue'},{name: 'other', value: true}]}`| button description
 `askForNoRepeat`  |`false`       |id (or object) to permits the user to ask to remember de answer 
 
 [!--lang:*-->

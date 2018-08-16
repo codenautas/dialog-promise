@@ -70,6 +70,7 @@ option            |def           |use
 `reject`          |`true`        |true if rejects the promise when close by the close button, Esc key or clicking outside of the dialog
 `closeValue`      |`undefined`   |value if rejects the promise when close by the close button, Esc key or clicking outside of the dialog
 `buttonDef`       |`{label:'Ok', value:true}`|main button of the alertPromise dialog
+`buttonsDef`       |`{label:'Ok', value:true, attributes:[{name: 'attrname', value: 'attrvalue'},{name: 'other', value: true}]}`| button description
 `askForNoRepeat`  |`false`       |id (or object) to permits the user to ask to remember de answer
 
 ## miniMenuPromise(elementsList[, opts])
