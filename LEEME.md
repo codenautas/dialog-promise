@@ -91,7 +91,8 @@ opción            |predeterminado|uso
 ------------------|--------------|-------------------------------------
 `underElement`    |`null`        |elemento bajo el cual situar la ventana, de no especificarse se centrará en la pantalla
 `withCloseButton` |`true`        |si coloca la cruz de cerrar en la esquina superior derecha
-`mainAttrs`       |`{}`          |atributos para la ventana principal
+`mainAttrs`       |`{}`          |atributos (properties) para la ventana principal
+`setAttrs`        |`{}`          |atributos DOM para la ventana principal
 `reject`          |`true`        |si se rechaza la promesa al devolver cerrando de la cruz o clickeando fuera de la pantalla o presionando escape
 `closeValue`      |`undefined`   |valor que se envía al cerrar con cruz, escape o click fuera del díalogo cuando no se rechazan promesas
 `inputDef`        |`{lines:2}`   |transforma el input en un textarea de *lines* filas
@@ -108,7 +109,8 @@ option            |def           |use
 ------------------|--------------|----------------------------------
 `underElement`    |`null`        |the dialog apears below this element. If no element is passed the dialog apears in the center of the window
 `withCloseButton` |`true`        |display the close button
-`mainAttrs`       |`{}`          |attributes for main dialog window
+`mainAttrs`       |`{}`          |attributes (properties) for main dialog window
+`setAttrs`        |`{}`          |DOM attributes for main dialog window
 `reject`          |`true`        |true if rejects the promise when close by the close button, Esc key or clicking outside of the dialog
 `closeValue`      |`undefined`   |value if rejects the promise when close by the close button, Esc key or clicking outside of the dialog
 `inputDef`        |`{lines:2}`   |transforms input to textarea with *lines* rows
