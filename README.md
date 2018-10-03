@@ -70,9 +70,9 @@ option            |def           |use
 `setAttrs`        |`{}`          |DOM attributes for main dialog window
 `reject`          |`true`        |true if rejects the promise when close by the close button, Esc key or clicking outside of the dialog
 `closeValue`      |`undefined`   |value if rejects the promise when close by the close button, Esc key or clicking outside of the dialog
-`inputDef`        |`{lines:2}`   |transforms input to textarea with *lines* rows
+`inputDef`        |`{lines:1, attributes:{attrname: 'attrvalue', othername:'othervalue'}}`   |lines option transforms input to textarea with *lines* rows, attributes is used to set attributes
 `buttonDef`       |`{label:'Ok', value:true}`|main button of the alertPromise dialog
-`buttonsDef`       |`{label:'Ok', value:true, attributes:[{name: 'attrname', value: 'attrvalue'},{name: 'other', value: true}]}`| button description
+`buttonsDef`       |`{label:'Ok', value:true, attributes:{attrname: 'attrvalue', othername:'othervalue'}}`| button description
 `askForNoRepeat`  |`false`       |id (or object) to permits the user to ask to remember de answer
 
 ## miniMenuPromise(elementsList[, opts])

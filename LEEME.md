@@ -95,9 +95,9 @@ opción            |predeterminado|uso
 `setAttrs`        |`{}`          |atributos DOM para la ventana principal
 `reject`          |`true`        |si se rechaza la promesa al devolver cerrando de la cruz o clickeando fuera de la pantalla o presionando escape
 `closeValue`      |`undefined`   |valor que se envía al cerrar con cruz, escape o click fuera del díalogo cuando no se rechazan promesas
-`inputDef`        |`{lines:2}`   |transforma el input en un textarea de *lines* filas
+`inputDef`        |`{lines:1, attributes:{attrname: 'attrvalue', othername:'othervalue'}}`   |definición del input,lines transforma el input en un textarea de *lines* filas y attributes permite setearle atributos
 `buttonDef`       |`{label:'Ok', value:true}`|descripción del botón principal *(solo para `alertPrimse`)*
-`buttonsDef`      |`{label:'Ok', value:true, attributes:[{name: 'attrname', value: 'attrvalue'},{name: 'other', value: true}]}`|descripción de los botones
+`buttonsDef`      |`{label:'Ok', value:true, attributes:{attrname:'attrvalue', othername:'othervalue'}}`|descripción de los botones
 `askForNoRepeat`  |`false`       |id (u objeto) para darle la posiblidad al usuario de no repetir la pregunta y acordarse de la respuesta
 
 
@@ -113,9 +113,9 @@ option            |def           |use
 `setAttrs`        |`{}`          |DOM attributes for main dialog window
 `reject`          |`true`        |true if rejects the promise when close by the close button, Esc key or clicking outside of the dialog
 `closeValue`      |`undefined`   |value if rejects the promise when close by the close button, Esc key or clicking outside of the dialog
-`inputDef`        |`{lines:2}`   |transforms input to textarea with *lines* rows
+`inputDef`        |`{lines:1, attributes:{attrname: 'attrvalue', othername:'othervalue'}}`   |lines option transforms input to textarea with *lines* rows, attributes is used to set attributes
 `buttonDef`       |`{label:'Ok', value:true}`|main button of the alertPromise dialog
-`buttonsDef`       |`{label:'Ok', value:true, attributes:[{name: 'attrname', value: 'attrvalue'},{name: 'other', value: true}]}`| button description
+`buttonsDef`       |`{label:'Ok', value:true, attributes:{attrname: 'attrvalue', othername:'othervalue'}}`| button description
 `askForNoRepeat`  |`false`       |id (or object) to permits the user to ask to remember de answer 
 
 [!--lang:*-->
