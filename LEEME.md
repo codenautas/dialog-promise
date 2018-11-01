@@ -90,6 +90,7 @@ Las opciones pueden aplicarse a todas las funciones de este módulo
 opción            |predeterminado|uso
 ------------------|--------------|-------------------------------------
 `underElement`    |`null`        |elemento bajo el cual situar la ventana, de no especificarse se centrará en la pantalla
+`replacingElement`|`null`        |oculta el elemento espeficicado y situa la ventana bajo su padre. Si no hay padre cuelga del body
 `withCloseButton` |`true`        |si coloca la cruz de cerrar en la esquina superior derecha
 `mainAttrs`       |`{}`          |atributos (properties) para la ventana principal
 `setAttrs`        |`{}`          |atributos DOM para la ventana principal
@@ -108,6 +109,7 @@ The options could be passed to all of these functions
 option            |def           |use
 ------------------|--------------|----------------------------------
 `underElement`    |`null`        |the dialog apears below this element. If no element is passed the dialog apears in the center of the window
+`replacingElement`|`null`        |hides the specified element and places the window under his father. If father not exists, window hangs from body 
 `withCloseButton` |`true`        |display the close button
 `mainAttrs`       |`{}`          |attributes (properties) for main dialog window
 `setAttrs`        |`{}`          |DOM attributes for main dialog window

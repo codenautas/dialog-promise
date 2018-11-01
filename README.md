@@ -65,6 +65,7 @@ The options could be passed to all of these functions
 option            |def           |use
 ------------------|--------------|----------------------------------
 `underElement`    |`null`        |the dialog apears below this element. If no element is passed the dialog apears in the center of the window
+`replacingElement`|`null`        |hides the specified element and places the window under his father. If father not exists, window hangs from body
 `withCloseButton` |`true`        |display the close button
 `mainAttrs`       |`{}`          |attributes (properties) for main dialog window
 `setAttrs`        |`{}`          |DOM attributes for main dialog window
