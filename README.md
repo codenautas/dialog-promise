@@ -109,6 +109,26 @@ option            |use
 `doneFun`         |alternate function to callback when the option was selected instead of resolving the promise
 `labels`          |array of texts to show (in table)
 
+
+## simpleFormPromise(elements, opts)
+
+Shows a simple form
+
+### elements
+  * if it is a string it shows the text
+  * if it is an HTML elementit shows it
+  * otherwise creates a button
+
+## Opciones
+
+atributo de element  |predeterminado|uso
+---------------------|--------------|-------------------------------------
+`dialogPromiseDone`  |              |see spanish
+`firstFocus`         |`null`        |see spanish
+`label`              |              |see spanish
+`attributes`         |`{}`          |see spanish
+`value`              |`null`        |see spanish
+`hotkey`             |              |see spanish
 ## License
 
 [MIT](LICENSE)

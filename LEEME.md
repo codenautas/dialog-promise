@@ -176,7 +176,54 @@ option            |use
 `doneFun`         |alternate function to callback when the option was selected instead of resolving the promise
 `labels`          |array of texts to show (in table)
 
+[!--lang:*-->
+
+## simpleFormPromise(elements, opts)
+
 <!--lang:es-->
+Arma un formulario simple basado en textos, botones o elementos HTML previamente creados. Devuelve un valor igual que los demás.
+
+### elements
+  * si es un string muestra el texto
+  * si es un elemento HTML lo incluye
+  * si no arma un botón
+
+
+<!--lang:en--]
+Shows a simple form
+
+### elements
+  * if it is a string it shows the text
+  * if it is an HTML elementit shows it
+  * otherwise creates a button
+
+<!--lang:es-->
+## Opciones
+Las opciones pueden aplicarse a todas las funciones de este módulo
+
+atributo de element  |predeterminado|uso
+---------------------|--------------|-------------------------------------
+`dialogPromiseDone`  |              |el simpleFormPromise colocal en el elemento HTML recibido la función de cierre de ventana, se le puede pasar el valor que se quiere devolver
+`firstFocus`         |`null`        |si es el elemento en el que hay que hacer autofocus al mostrar el dialogo
+`label`              |              |del botón que se va a crear
+`attributes`         |`{}`          |del botón que se va a crear
+`value`              |`null`        |valor que devolverá el diálogo al presionar el botón creado
+`hotkey`             |              |hotkey del elemento
+
+
+<!--lang:en--]
+## Opciones
+
+atributo de element  |predeterminado|uso
+---------------------|--------------|-------------------------------------
+`dialogPromiseDone`  |              |see spanish
+`firstFocus`         |`null`        |see spanish
+`label`              |              |see spanish
+`attributes`         |`{}`          |see spanish
+`value`              |`null`        |see spanish
+`hotkey`             |              |see spanish
+<!--lang:es-->
+
 ## Licencia
 <!--lang:en--]
 ## License
