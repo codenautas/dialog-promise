@@ -50,7 +50,7 @@ describe("interactive ",function(){
         return 1;
     });
     after(async function(){
-        await page.waitFor(process.env.TRAVIS?10:1000);
+        await page.waitForTimeout(process.env.TRAVIS?10:1000);
         await browser.close()
         await server.closeServer();
     });
