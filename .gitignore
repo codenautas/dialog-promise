@@ -36,4 +36,3 @@ node_modules
 local-*
 *-local.*
 
-package-lock.json
