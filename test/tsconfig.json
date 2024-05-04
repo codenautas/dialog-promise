@@ -3,7 +3,7 @@
         "outDir": "./local-built",
         "declaration": true,
         "module": "UMD",
-        "target": "es5",
+        "target": "es2015",
         "sourceMap": true,
         "moduleResolution": "node",
         "lib": [ "es2015", "dom" ]

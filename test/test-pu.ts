@@ -2,6 +2,7 @@ import {Server4Test} from 'server4test';
 import * as puppeteer from 'puppeteer';
 import * as MiniTools  from 'mini-tools';
 import * as discrepances from 'discrepances';
+import {sleep} from 'best-globals'
 
 import 'mocha';
 
@@ -50,7 +51,7 @@ describe("interactive ",function(){
         return 1;
     });
     after(async function(){
-        await page.waitForTimeout(process.env.TRAVIS?10:1000);
+        await sleep(process.env.TRAVIS?10:1000);
         await browser.close()
         await server.closeServer();
     });
