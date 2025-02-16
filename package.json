@@ -1,7 +1,7 @@
 {
   "name": "dialog-promise",
   "description": "Dialog that returns promises",
-  "version": "0.10.0",
+  "version": "0.10.1",
   "author": "Codenautas <codenautas@googlegroups.com>",
   "repository": "codenautas/dialog-promise",
   "license": "MIT",
@@ -10,18 +10,18 @@
     "lib"
   ],
   "dependencies": {
-    "best-globals": "^1.1.4"
+    "best-globals": "^1.1.6"
   },
   "devDependencies": {
-    "@types/node": "^20.12.8",
-    "@types/mocha": "^10.0.6",
-    "@types/puppeteer": "^5.4.7",
-    "mocha": "^10.4.0",
-    "puppeteer": "^22.7.1",
+    "@types/node": "^22.13.4",
+    "@types/mocha": "^10.0.10",
+    "@types/puppeteer": "^7.0.4",
+    "mocha": "^11.1.0",
+    "puppeteer": "^24.2.1",
     "discrepances": "^0.2.8",
     "require-bro": "^0.3.1",
-    "server4test": "^0.8.7",
-    "typescript": "^5.4.5"
+    "server4test": "^1.0.0",
+    "typescript": "^5.7.3"
   },
   "engines": {
     "node": ">= 16"
