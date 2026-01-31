@@ -27,7 +27,8 @@
     "node": ">= 16"
   },
   "scripts": {
-    "test": "tsc -p test && mocha test/local-built/test*.js"
+    "test": "echo Use test-ui to test!",
+    "test-ui": "tsc -p test && mocha test/local-built/test*.js"
   },
   "qa-control": {
     "package-version": "0.3.0",
