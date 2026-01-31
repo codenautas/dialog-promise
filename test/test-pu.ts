@@ -12,6 +12,9 @@ const config = {
     }
 };
 
+const headless = !!process.env.GITHUB_ACTIONS || !!process.env.TRAVIS || !config.test["view-chrome"];
+const slowMo = headless ? 1 : 50;
+
 describe("interactive ",function(){
     var browser: puppeteer.Browser;
     var page   : puppeteer.Page;
@@ -21,7 +24,7 @@ describe("interactive ",function(){
         server = new Server4Test({port:43332});
         console.log("starting server");
         await server.start();
-        browser = await puppeteer.launch({headless: !!process.env.TRAVIS || !config.test["view-chrome"], slowMo: 50});
+        browser = await puppeteer.launch({headless, slowMo});
         page = await browser.newPage();
         page.on('console', msg => { 
             console.log('console.'+msg.type(), msg.text()) 

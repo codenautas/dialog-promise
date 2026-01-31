@@ -10,18 +10,18 @@
     "lib"
   ],
   "dependencies": {
-    "best-globals": "^2.0.1"
+    "best-globals": "^2.0.7"
   },
   "devDependencies": {
-    "@types/node": "^24.0.3",
+    "@types/node": "^25.1.0",
     "@types/mocha": "^10.0.10",
     "@types/puppeteer": "^7.0.4",
-    "mocha": "^11.7.0",
-    "puppeteer": "^24.10.2",
-    "discrepances": "^0.2.8",
-    "require-bro": "^0.3.1",
+    "mocha": "^11.7.5",
+    "puppeteer": "^24.36.1",
+    "discrepances": "^0.2.9",
+    "require-bro": "^0.3.2",
     "server4test": "^1.0.0",
-    "typescript": "^5.8.3"
+    "typescript": "^5.9.3"
   },
   "engines": {
     "node": ">= 16"
