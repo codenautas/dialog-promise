@@ -9,17 +9,22 @@
   "files": [
     "lib"
   ],
+  "overrides": {
+    "diff": ">=8.0.2",
+    "serialize-javascript": ">=7.0.0",
+    "uuid": ">=14.0.0"
+  },
   "dependencies": {
-    "best-globals": "^2.0.7"
+    "best-globals": "^2.1.5"
   },
   "devDependencies": {
-    "@types/node": "^25.1.0",
+    "@types/node": "^25.9.1",
     "@types/mocha": "^10.0.10",
     "@types/puppeteer": "^7.0.4",
-    "mocha": "^11.7.5",
-    "puppeteer": "^24.36.1",
-    "discrepances": "^0.2.9",
-    "require-bro": "^0.3.2",
+    "mocha": "^11.7.6",
+    "puppeteer": "^25.0.4",
+    "discrepances": "^0.2.14",
+    "require-bro": "^0.3.4",
     "server4test": "^1.0.0",
     "typescript": "^5.9.3"
   },
