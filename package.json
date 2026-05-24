@@ -36,6 +36,7 @@
     "test-ui": "tsc -p test && mocha test/local-built/test*.js"
   },
   "qa-control": {
+    "profile": "minimum",
     "package-version": "0.3.0",
     "coverage": 0,
     "run-in": "client",

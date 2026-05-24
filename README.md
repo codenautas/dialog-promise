@@ -3,8 +3,9 @@ Dialog that returns promises
 
 ![extending](https://img.shields.io/badge/stability-extending-orange.svg)
 [![npm-version](https://img.shields.io/npm/v/dialog-promise.svg)](https://npmjs.org/package/dialog-promise)
-[![build](https://github.com/codenautas/dialog-promise/actions/workflows/node.js.yml/badge.svg)](https://github.com/codenautas/dialog-promise/actions/workflows/node.js.yml)
 [![downloads](https://img.shields.io/npm/dm/dialog-promise.svg)](https://npmjs.org/package/dialog-promise)
+[![build](https://github.com/codenautas/dialog-promise/actions/workflows/build-and-test.yml/badge.svg)](https://github.com/codenautas/dialog-promise/actions/workflows/build-and-test.yml)
+[![security](https://socket.dev/api/badge/npm/package/dialog-promise)](https://socket.dev/npm/package/dialog-promise)
 
 
 
