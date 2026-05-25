@@ -15,7 +15,7 @@
     "uuid": ">=14.0.0"
   },
   "dependencies": {
-    "best-globals": "^2.1.5"
+    "best-globals": "^3.0.0-beta.1"
   },
   "devDependencies": {
     "@types/node": "^25.9.1",
@@ -24,9 +24,10 @@
     "mocha": "^11.7.6",
     "puppeteer": "^25.0.4",
     "discrepances": "^0.2.14",
-    "require-bro": "^0.3.4",
+    "require-bro": "^3.0.0-beta.1",
     "server4test": "^1.0.0",
-    "typescript": "^5.9.3"
+    "typescript": "^5.9.3",
+    "when-all-ready": "^3.0.0-beta.1"
   },
   "engines": {
     "node": ">= 16"
