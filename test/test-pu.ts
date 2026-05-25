@@ -53,6 +53,17 @@ describe("interactive ",function(){
         discrepances.showAndThrow(title,"Example Two");
         return 1;
     });
+    it("shows today from best-globals (UMD requiring ESM)", async function(){
+        this.timeout(20000);
+        await page.click('#show_today');
+        await page.waitForSelector('.dialog-promise', {visible:true});
+        var dialogText = await page.$eval('.dialog-promise', el => (el as HTMLElement).textContent || '');
+        var ymdRegex = /Today is: \d{4}-\d{2}-\d{2}/;
+        discrepances.showAndThrow(ymdRegex.test(dialogText), true, {showContext:'dialog should display today as ymd, got: '+dialogText});
+        await page.keyboard.press('Enter');
+        var none = await page.$$('.dialog_promise');
+        discrepances.showAndThrow(none, [], {showContext:'today dialog must be closed'});
+    });
     after(async function(){
         await sleep(process.env.TRAVIS?10:1000);
         await browser.close()

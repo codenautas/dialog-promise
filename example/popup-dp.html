@@ -69,10 +69,22 @@
     <p>
       <button id=add_lines>Add many lines</button>
     </p>
+    <p>
+      <button id=show_today>Show today (best-globals)</button>
+    </p>
     <p>Results:</p>
     <pre id=results></pre>
     <script src="../node_modules/require-bro/lib/require-bro.js"></script>
-    <script src="../node_modules/best-globals/best-globals.js"></script>
+    <script>
+    var bootstrapPromise = window.requireBro.bootstrap([
+        {name: 'best-globals', url: '../node_modules/best-globals/best-globals.js'}
+    ]);
+    var loadPromise = new Promise(function(resolve){
+        if (document.readyState === 'complete') resolve();
+        else window.addEventListener('load', function(){ resolve(); });
+    });
+    var dialogPromiseReady = Promise.all([bootstrapPromise, loadPromise]);
+    </script>
     <script src="../lib/dialog-promise.js"></script>
 <script>
 
@@ -83,7 +95,7 @@ function seeReject(err){
 
 var askForNoRepeatRepo={timeout:5000};
 
-window.addEventListener('load', function(){
+dialogPromiseReady.then(function(){
     var globalExampleValue=5;
     results.textContent+='Initiated';
     add_lines.addEventListener('click', function(){
@@ -298,6 +310,13 @@ window.addEventListener('load', function(){
     });
     be_wider.addEventListener('click', function(){
         document.body.style.width='2000px';
+    });
+    show_today.addEventListener('click', function(){
+        var bg = requireBro('best-globals');
+        var today = bg.date.today();
+        alertPromise('Today is: '+today.toYmd()).then(function(result){
+            results.textContent+='\n'+'Today shown: '+today.toYmd();
+        }).catch(seeReject);
     });
     DialogPromise.path.img='../lib/';
 });
