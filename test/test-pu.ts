@@ -26,8 +26,8 @@ describe("interactive ",function(){
         await server.start();
         browser = await puppeteer.launch({headless, slowMo});
         page = await browser.newPage();
-        page.on('console', msg => { 
-            console.log('console.'+msg.type(), msg.text()) 
+        page.on('console', msg => {
+            console.log('console.'+msg.type(), msg.text())
         });
         await page.setViewport({width:1360, height:768});
         await page.goto('http://localhost:'+server.port+'/example/popup-dp.html');

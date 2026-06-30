@@ -29,7 +29,7 @@
 }
 
 .dialog-promise-inner-div>*{
-    margin: 10px 10px 5px 10px; 
+    margin: 10px 10px 5px 10px;
 }
 
 .dialog-promise button{
@@ -39,7 +39,7 @@
 .dialog-promise .dialog-promise-upper-div{
     /* background-color: #F9C;  */
     margin: 0px;
-    padding: 0px; 
+    padding: 0px;
     text-align: left;
 }
 
@@ -77,7 +77,7 @@
     border:0px;
     padding:0px;
     left:auto;
-    width:24px; 
+    width:24px;
     /* height:16px; */
     font-weight:bold;
     color:gray;
