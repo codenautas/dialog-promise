@@ -3,11 +3,11 @@
 Dialog that returns promises
 
 <!-- cucardas -->
-![extending](https://img.shields.io/badge/stability-extending-orange.svg)
 [![npm-version](https://img.shields.io/npm/v/dialog-promise.svg)](https://npmjs.org/package/dialog-promise)
 [![downloads](https://img.shields.io/npm/dm/dialog-promise.svg)](https://npmjs.org/package/dialog-promise)
 [![build](https://github.com/codenautas/dialog-promise/actions/workflows/build-and-test.yml/badge.svg)](https://github.com/codenautas/dialog-promise/actions/workflows/build-and-test.yml)
 [![security](https://socket.dev/api/badge/npm/package/dialog-promise)](https://socket.dev/npm/package/dialog-promise)
+[![qa-control](https://github.com/codenautas/dialog-promise/actions/workflows/qa-control.yml/badge.svg)](https://github.com/codenautas/dialog-promise/actions/workflows/qa-control.yml)
 
 
 <!--multilang buttons-->
@@ -58,7 +58,7 @@ function example2(button){
 ## alertPromise, confirmPromise, promptPromise
 
 <!--lang:es-->
-Reciben un mensaje (y opcionalmente un conjunto de opciones). 
+Reciben un mensaje (y opcionalmente un conjunto de opciones).
 Equivalen a las funciones nativas `alert`, `confirm` y `prompt`
 
 función   |valor devuelto
@@ -70,13 +70,13 @@ función   |valor devuelto
 Si se presiona `Escape` o se hace `click` fuera de la ventana de diálogo la función devuelve una promesa rechazada.
 
 <!--lang:en--]
-Recives a mensage (and an object with options). 
+Recives a mensage (and an object with options).
 These are versions of the native funcions `alert`, `confirm` y `prompt`
 
 function  |returned value
 ----------|---------------------
 `alert`   |`true`
-`confirm` |`true` or `false` 
+`confirm` |`true` or `false`
 `prompt`  |a string with the entered text
 
 If `Escape` is pressed or the mouse clicked outside the dialog the function returns a rejected promise.
@@ -107,7 +107,7 @@ The options could be passed to all of these functions
 option            |def           |use
 ------------------|--------------|----------------------------------
 `underElement`    |`null`        |the dialog apears below this element. If no element is passed the dialog apears in the center of the window
-`replacingElement`|`null`        |hides the specified element and places the window under his father. If father not exists, window hangs from body 
+`replacingElement`|`null`        |hides the specified element and places the window under his father. If father not exists, window hangs from body
 `withCloseButton` |`true`        |display the close button
 `mainAttrs`       |`{}`          |attributes (properties) for main dialog window
 `setAttrs`        |`{}`          |DOM attributes for main dialog window
@@ -116,7 +116,7 @@ option            |def           |use
 `inputDef`        |`{lines:1, attributes:{attrname: 'attrvalue', othername:'othervalue'}}`   |lines option transforms input to textarea with *lines* rows, attributes is used to set attributes
 `buttonDef`       |`{label:'Ok', value:true}`|main button of the alertPromise dialog
 `buttonsDef`       |`{label:'Ok', value:true, attributes:{attrname: 'attrvalue', othername:'othervalue'}}`| button description
-`askForNoRepeat`  |`false`       |id (or object) to permits the user to ask to remember de answer 
+`askForNoRepeat`  |`false`       |id (or object) to permits the user to ask to remember de answer
 
 [!--lang:*-->
 ## miniMenuPromise(elementsList[, opts])
@@ -228,4 +228,3 @@ atributo de element  |predeterminado|uso
 [!--lang:*-->
 
 [MIT](LICENSE)
-

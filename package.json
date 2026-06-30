@@ -15,16 +15,17 @@
     "uuid": ">=14.0.0"
   },
   "dependencies": {
-    "best-globals": "^2.1.5"
+    "best-globals": "^2.2.2"
   },
   "devDependencies": {
-    "@types/node": "^25.9.1",
+    "@types/node": "^26.0.1",
     "@types/mocha": "^10.0.10",
     "@types/puppeteer": "^7.0.4",
     "mocha": "^11.7.6",
-    "puppeteer": "^25.0.4",
+    "puppeteer": "^25.2.1",
     "discrepances": "^0.2.14",
-    "require-bro": "^0.3.4",
+    "qa-control": "^0.7.5",
+    "require-bro": "^0.3.6",
     "server4test": "^1.0.0",
     "typescript": "^5.9.3"
   },
@@ -32,8 +33,8 @@
     "node": ">= 16"
   },
   "scripts": {
-    "test": "echo Use test-ui to test!",
-    "test-ui": "tsc -p test && mocha test/local-built/test*.js"
+    "test": "tsc -p test && mocha test/local-built/test*.js",
+    "test-ci": "npm test"
   },
   "qa-control": {
     "profile": "minimum",
@@ -41,6 +42,7 @@
     "coverage": 0,
     "run-in": "client",
     "stability": "extending",
-    "type": "lib"
+    "type": "lib",
+    "gha": "all"
   }
 }
