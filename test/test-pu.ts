@@ -6,6 +6,8 @@ import {sleep} from 'best-globals'
 
 import 'mocha';
 
+const pti = require('puppeteer-to-istanbul');
+
 const config = {
     test:{
         "view-chrome": true
@@ -30,6 +32,7 @@ describe("interactive ",function(){
             console.log('console.'+msg.type(), msg.text())
         });
         await page.setViewport({width:1360, height:768});
+        await page.coverage.startJSCoverage();
         await page.goto('http://localhost:'+server.port+'/example/popup-dp.html');
         console.log('system ready');
     });
@@ -54,7 +57,11 @@ describe("interactive ",function(){
         return 1;
     });
     after(async function(){
+        this.timeout(50000);
         await sleep(process.env.TRAVIS?10:1000);
+        const jsCoverage = await page.coverage.stopJSCoverage();
+        const libCoverage = jsCoverage.filter(entry => /\/lib\/dialog-promise\.js(\?|$)/.test(entry.url));
+        pti.write(libCoverage, {includeHostname:false, storagePath:'./.nyc_output'});
         await browser.close()
         await server.closeServer();
     });

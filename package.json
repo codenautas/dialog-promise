@@ -22,7 +22,9 @@
     "@types/mocha": "^10.0.10",
     "@types/puppeteer": "^7.0.4",
     "mocha": "^11.7.6",
+    "nyc": "^17.1.0",
     "puppeteer": "^25.2.1",
+    "puppeteer-to-istanbul": "^1.4.0",
     "discrepances": "^0.2.14",
     "qa-control": "^0.7.5",
     "require-bro": "^0.3.6",
@@ -33,7 +35,7 @@
     "node": ">= 16"
   },
   "scripts": {
-    "test": "tsc -p test && mocha test/local-built/test*.js",
+    "test": "tsc -p test && mocha test/local-built/test*.js && nyc report --reporter=text --reporter=html",
     "test-ci": "npm test"
   },
   "qa-control": {
