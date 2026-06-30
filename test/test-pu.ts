@@ -26,7 +26,8 @@ describe("interactive ",function(){
         server = new Server4Test({port:43332});
         console.log("starting server");
         await server.start();
-        browser = await puppeteer.launch({headless, slowMo});
+        const launchArgs = process.env.GITHUB_ACTIONS ? ['--no-sandbox'] : [];
+        browser = await puppeteer.launch({headless, slowMo, args: launchArgs});
         page = await browser.newPage();
         page.on('console', msg => {
             console.log('console.'+msg.type(), msg.text())

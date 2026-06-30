@@ -35,8 +35,8 @@
     "node": ">= 16"
   },
   "scripts": {
-    "test": "tsc -p test && mocha test/local-built/test*.js && nyc report --reporter=text --reporter=html",
-    "test-ci": "npm test"
+    "test": "tsc -p test && mocha test/local-built/test*.js",
+    "test-ci": "npm test && nyc report --reporter=text --reporter=html --reporter=lcov"
   },
   "qa-control": {
     "profile": "minimum",
