@@ -74,11 +74,16 @@
     </p>
     <p>Results:</p>
     <pre id=results></pre>
+    <script type="importmap">
+    {
+        "imports": {
+            "best-globals":   "/node_modules/best-globals/best-globals.js",
+            "when-all-ready": "/node_modules/when-all-ready/when-all-ready.js"
+        }
+    }
+    </script>
     <script src="../node_modules/require-bro/lib/require-bro.js"></script>
-    <script>window.requireBro.bootstrap([
-        {name: 'best-globals',   url: '../node_modules/best-globals/best-globals.js'},
-        {name: 'when-all-ready', url: '../node_modules/when-all-ready/when-all-ready.js'}
-    ]);</script>
+    <script>window.requireBro.bootstrap(['best-globals', 'when-all-ready']);</script>
     <script src="../lib/dialog-promise.js"></script>
 <script>
 
