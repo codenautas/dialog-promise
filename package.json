@@ -12,38 +12,38 @@
   "overrides": {
     "diff": ">=8.0.2",
     "serialize-javascript": ">=7.0.0",
-    "uuid": ">=14.0.0"
+    "uuid": ">=14.0.0",
+    "@istanbuljs/load-nyc-config": {
+      "js-yaml": "^4.1.0"
+    }
   },
   "dependencies": {
-    "best-globals": "^2.2.2"
+    "best-globals": "^2.2.3"
   },
   "devDependencies": {
-    "@types/node": "^26.0.1",
     "@types/mocha": "^10.0.10",
-    "@types/puppeteer": "^7.0.4",
-    "mocha": "^11.7.6",
-    "nyc": "^17.1.0",
-    "puppeteer": "^25.2.1",
-    "puppeteer-to-istanbul": "^1.4.0",
+    "mocha": "^12.0.3",
+    "nyc": "^18.0.0",
     "discrepances": "^0.2.14",
-    "qa-control": "^0.7.5",
-    "require-bro": "^0.3.6",
-    "server4test": "^1.0.0",
+    "qa-control": "^0.12.2",
+    "require-bro": "^0.4.1",
+    "server4test": "^2.0.0-rc.1",
     "typescript": "^5.9.3"
   },
   "engines": {
     "node": ">= 16"
   },
   "scripts": {
-    "test": "tsc -p test && mocha test/local-built/test*.js",
-    "test-ci": "npm test && nyc report --reporter=text --reporter=html --reporter=lcov"
+    "build-test": "tsc -p test && nyc instrument --delete lib local-instrumented/lib",
+    "test": "npm run test-navigator",
+    "test-ci": "npm run test-navigator && nyc report --reporter=text --reporter=html --reporter=lcov",
+    "test-navigator": "npm run build-test && server4test --run-browser chrome,firefox",
+    "test-navigator-inf": "npm run build-test && server4test"
   },
   "qa-control": {
     "profile": "minimum",
-    "package-version": "0.3.0",
-    "coverage": 0,
+    "coverage": 90,
     "run-in": "client",
-    "stability": "extending",
     "type": "lib",
     "gha": "all"
   }

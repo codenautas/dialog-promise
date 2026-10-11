@@ -1,9 +1,0 @@
-language: node_js
-node_js:
-  - "14"
-  - "16"
-matrix:
-  fast_finish: true
-script: "npm test"
-dist: trusty
-sudo: required

@@ -3,10 +3,12 @@
         "outDir": "./local-built",
         "declaration": true,
         "module": "UMD",
-        "target": "es2015",
+        "target": "es2017",
         "sourceMap": true,
         "moduleResolution": "node",
-        "lib": [ "es2015", "dom" ]
+        "strict": true,
+        "types": [ "mocha" ],
+        "lib": [ "es2017", "dom" ]
     },
     "include":[
         "test-*.ts"
