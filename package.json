@@ -24,10 +24,10 @@
     "@types/mocha": "^10.0.10",
     "mocha": "^12.0.3",
     "nyc": "^18.0.0",
-    "discrepances": "^0.2.14",
+    "discrepances": "^0.3.3",
     "qa-control": "^0.12.2",
     "require-bro": "^0.4.1",
-    "server4test": "^2.0.0-rc.1",
+    "server4test": "^2.0.1",
     "typescript": "^5.9.3"
   },
   "engines": {
@@ -41,7 +41,6 @@
     "test-navigator-inf": "npm run build-test && server4test"
   },
   "qa-control": {
-    "profile": "minimum",
     "coverage": 90,
     "run-in": "client",
     "type": "lib",
